@@ -1,64 +1,61 @@
-<div class="area">
-  <div class="hup"></div>
-  <div class="hup"></div>
-  <div class="hup"></div>
-  <div class="hup"></div>
-  <div class="hup"></div>
-  <div class="hup"></div>
-  <div class="hup"></div>
-  <div class="hup"></div>
-  <!--
-  <div class="hup"></div>
-  <div class="hup"></div>
-  <div class="hup"></div>
-  <div class="hup"></div>
-  <div class="hup"></div>
-  <div class="hup"></div>
-  -->
+<div id="artificial">
+    <div id="orbiter">
+        <div></div><div></div>
+        <div></div><div></div>
+        <div></div><div></div>
+        <div></div><div></div>
+        <div></div><div></div>
+        <div></div><div></div>
+        <div></div><div></div>
+        <div></div><div></div>
+    </div>
 </div>
 
 <style>
-div.hup:nth-child(1)  { animation: orbit 2.4s linear -7s infinite }
-div.hup:nth-child(2)  { animation: orbit 2.6s linear -4s infinite }
-div.hup:nth-child(3)  { animation: orbit 2.8s linear -2s infinite }
-div.hup:nth-child(4)  { animation: orbit 3.0s linear  0s infinite }
-div.hup:nth-child(5)  { animation: orbit 3.2s linear -1s infinite }
-div.hup:nth-child(6)  { animation: orbit 3.4s linear -2s infinite }
-div.hup:nth-child(7)  { animation: orbit 3.6s linear -3s infinite }
-div.hup:nth-child(8)  { animation: orbit 3.8s linear -4s infinite }
 
-div.hup:nth-child(9)  { animation: orbit 4.0s linear -5s infinite }
-div.hup:nth-child(10) { animation: orbit 4.2s linear -6s infinite }
-div.hup:nth-child(11) { animation: orbit 4.4s linear -7s infinite }
-div.hup:nth-child(12) { animation: orbit 4.6s linear -8s infinite }
-div.hup:nth-child(13) { animation: orbit 4.8s linear -9s infinite }
-div.hup:nth-child(14) { animation: orbit 4.8s linear -8s infinite }
-div.hup:nth-child(15) { animation: orbit 5.0s linear -7s infinite }
+div#orbiter div:nth-child(1)  { --depth: 1  }
+div#orbiter div:nth-child(2)  { --depth: 2  }
+div#orbiter div:nth-child(3)  { --depth: 3  }
+div#orbiter div:nth-child(4)  { --depth: 4  }
+div#orbiter div:nth-child(5)  { --depth: 5  }
+div#orbiter div:nth-child(6)  { --depth: 6  }
+div#orbiter div:nth-child(7)  { --depth: 7  }
+div#orbiter div:nth-child(8)  { --depth: 8  }
+div#orbiter div:nth-child(9)  { --depth: 9  }
+div#orbiter div:nth-child(10) { --depth: 10 }
+div#orbiter div:nth-child(11) { --depth: 11 }
+div#orbiter div:nth-child(12) { --depth: 12 }
+div#orbiter div:nth-child(13) { --depth: 13 }
+div#orbiter div:nth-child(14) { --depth: 14 }
+div#orbiter div:nth-child(15) { --depth: 15 }
+div#orbiter div:nth-child(16) { --depth: 16 }
 
-
-div.area {
-  position: relative;
-
+div#artificial {
+    background: red;
+    position: relative;
 }
-/*body {  background: url(https://cdn.dribbble.com/users/32512/screenshots/3377573/sleep_mode_by_gleb_for_rokid.gif);}*/
+body {  background: url(https://cdn.dribbble.com/users/32512/screenshots/3377573/sleep_mode_by_gleb_for_rokid.gif);}
 body {
-  background: black;
-  mix-blend-mode: color-dodge;
+    background: black;
+    mix-blend-mode: color-dodge;
 }
-div.hup {
-  position: absolute;
-  left: 300px;
-  top: 180px;
-  width: 160px;
-  height: 260px;
-  filter: blur(20px);
-  mix-blend-mode: color-dodge;
-  border-radius: 100px;
-  /*isolation: isolate;*/
-  background: rgba(100,0,255,1.0);
+div#orbiter div {
+    position: absolute;
+    left: 380px;
+    top: 380px;
+    width:  calc( var(--depth) * 1px + 40px);
+    height: calc( var(--depth) * 10px + 40px);
+    filter: blur(calc( var(--depth) * 2px + 6px));
+    mix-blend-mode: screen;
+    mix-blend-mode: exclusion;
+    border-radius: 100px;
+    /*isolation: isolate;*/
+    animation: orbit calc( var(--depth) * 0.6s + 1.0s) linear calc(var(--depth) * -8s) infinite;
+    background: rgba(128,0,255,1.0);
 }
 
 @keyframes orbit {
-  0%    { transform: rotate(0deg)   translateY(60px) }
-  100%  { transform: rotate(360deg) translateY(60px) }
+    0%    { transform: rotate(0deg)   translateY(100px) }
+    50%   { transform: rotate(180deg) translateY(-260px) }
+    100%  { transform: rotate(360deg) translateY(100px) }
 }

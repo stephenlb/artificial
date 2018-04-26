@@ -1,4 +1,4 @@
-<div id="artificial" class="mood-happy">
+<div id="artificial" class="mood-mad">
     <div id="orbiter">
         <div><div></div><div></div></div>
         <div><div></div><div></div></div>
@@ -7,8 +7,29 @@
         <div><div></div><div></div></div>
         <div><div></div><div></div></div>
     </div>
+    <emoji class="smile">
+        <e></e><e></e><e></e><e></e><e></e><e></e><e></e><e></e><e></e><e></e>
+        <e></e><e></e><e></e><e></e><e></e><e></e><e></e><e></e><e></e><e></e>
+        <e></e><e></e><e></e><e></e><e></e><e></e><e></e><e></e><e></e><e></e>
+        <e></e><e></e><e></e><e></e><e></e><e></e><e></e><e></e><e></e>
+        <e></e><e></e><e></e><e></e><e></e><e></e><e></e><e></e><e></e>
+        <e></e><e></e><e></e><e></e><e></e><e></e><e></e><e></e><e></e>
+        <e></e><e></e><e></e><e></e><e></e><e></e><e></e><e></e><e></e>
+        <e></e><e></e><e></e><e></e><e></e><e></e><e></e><e></e><e></e>
+        <e></e><e></e><e></e><e></e><e></e><e></e><e></e><e></e><e></e>
+    </emoji>
     <div id="panel">
-        jasflkjaslkdfjlkasjdfk
+        <p>jasflkjaslkdfjlkasjdfk</p>
+        <p>jasflkjaslkdfjlkasjdfk</p>
+        <p>jasflkjaslkdfjlkasjdfk</p>
+        <p>jasflkjaslkdfjlkasjdfk</p>
+        <p>jasflkjaslkdfjlkasjdfk</p>
+        <p>jasflkjaslkdfjlkasjdfk</p>
+        <p>jasflkjaslkdfjlkasjdfk</p>
+        <p>jasflkjaslkdfjlkasjdfk</p>
+        <p>jasflkjaslkdfjlkasjdfk</p>
+        <p>jasflkjaslkdfjlkasjdfk</p>
+        <p>jasflkjaslkdfjlkasjdfk</p>
     </div>
 </div>
 
@@ -21,6 +42,51 @@ body {
     border: 0;
     margin: 0;
 }
+
+div#panel {
+    /* TODO */
+    /* TODO */
+    /* TODO */
+}
+
+/* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
+/*               EMOOOOOOJIIIIIII              */
+/* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
+emoji {
+    position: absolute;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 750px;
+    min-width: 750px;
+    width: 750px;
+    border: 1px solid yellow;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    margin: auto;
+    background: transparent;
+}
+emoji e {
+    display: block;
+    width: 50px;
+    height: 50px;
+    border: 1px solid rgba( 0, 0, 0, 0.5 );
+    background-color: rgba( 255, 255, 255, 0.0 );
+}
+emoji.smile {
+    --bg: rgba( 255, 255, 255, 0.8 );
+}
+
+emoji.smile e:nth-child(4)  { background: var(--bg) }
+emoji.smile e:nth-child(5)  { background: var(--bg) }
+emoji.smile e:nth-child(11) { background: var(--bg) }
+emoji.smile e:nth-child(12) { background: var(--bg) }
+emoji.smile e:nth-child(17) { background: var(--bg) }
+emoji.smile e:nth-child(20) { background: var(--bg) }
+emoji.smile e:nth-child(24) { background: var(--bg) }
+emoji.smile e:nth-child(27) { background: var(--bg) }
 
 div#artificial.mood-happy div { background: rgba(128,  170, 140, 1.0) }
 div#artificial.mood-happy     { background: rgba(175,   50, 150, 0.9) }
@@ -42,15 +108,17 @@ div#artificial {
 }
 
 div#orbiter {
-    /*align-self: flex-end;
-    align-self: flex-start;*/
+
+    display: none; /* !!!!!!!!!!!! */
+    display: none; /* !!!!!!!!!!!! */
+    display: none; /* !!!!!!!!!!!! */
+    display: none; /* !!!!!!!!!!!! */
+
     text-align: center;
     background: yellow;
     height: 0px;
     width: 0px;
     margin: auto;
-}
-div#panel {
 }
 
 div#orbiter div {
@@ -82,7 +150,7 @@ div#orbiter.talking div div {
 
 @keyframes talking {
     0%    { transform: scale(0.4) }
-    10%   { transform: scale3d(4.5, 2.5, 30.5) }
+    10%   { transform: scale3d(6.5, 3.5, 3.5) }
     100%  { transform: scale(-1.0) }
 }
 

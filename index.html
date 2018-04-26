@@ -3,7 +3,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-<div id="artificial" class="mood-happy talking">
+<div id="artificial" class="mood-happy">
     <div id="orbiter">
         <div><div></div><div></div></div>
         <div><div></div><div></div></div>
@@ -35,11 +35,13 @@
 </div>
 
 <style>
+/* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
+/*                 Base Styles                 */
+/* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
 html, body {
     overflow: hidden;
 }
 
-body {  background: url(https://cdn.dribbble.com/users/32512/screenshots/3377573/sleep_mode_by_gleb_for_rokid.gif);}
 body {
     background: black;
     padding: 0;
@@ -106,10 +108,20 @@ div#artificial.mood-happy emoji {
     animation: happy 0.4s ease-in-out -1s infinite alternate;
 }
 
+div#artificial.mood-happy div#orbiter div { mix-blend-mode: color-burn  }
+
+div#artificial.mood-happy div#orbiter div { mix-blend-mode: darken  }
+div#artificial.mood-happy div#orbiter div { mix-blend-mode: luminosity  }
+div#artificial.mood-happy div#orbiter div { mix-blend-mode: hue  }
+div#artificial.mood-happy div#orbiter div { mix-blend-mode: soft-light  }
+div#artificial.mood-happy div#orbiter div { mix-blend-mode: hard-light  }
+div#artificial.mood-happy div#orbiter div { mix-blend-mode: lighten  }
+div#artificial.mood-happy div#orbiter div { mix-blend-mode: overlay  }
+div#artificial.mood-happy div#orbiter div { mix-blend-mode: screen  }
 div#artificial.mood-happy div#orbiter div { mix-blend-mode: color-dodge  }
 
-div#artificial.mood-happy div { background: rgba(128,    0, 140, 1.0) }
-div#artificial.mood-happy     { background: rgba(175,   50, 150, 0.9) }
+div#artificial.mood-happy div { background: rgba(200,   200, 10, 1.0) }
+div#artificial.mood-happy     { background: rgba(190,   90, 190, 0.9) }
 
 div#artificial.mood-happy emoji e:nth-child(2)  { background: var(--bg) }
 div#artificial.mood-happy emoji e:nth-child(3)  { background: var(--bg) }
@@ -186,10 +198,12 @@ div#artificial.mood-sad       { background: rgba( 10,   10, 100, 1.0) }
 div#artificial.mood-sad emoji e:nth-child(2)  { background: var(--bg) }
 div#artificial.mood-sad emoji e:nth-child(3)  { background: var(--bg) }
 div#artificial.mood-sad emoji e:nth-child(4)  { background: var(--bg) }
+div#artificial.mood-sad emoji e:nth-child(27) { background: var(--bg) }
 
 div#artificial.mood-sad emoji e:nth-child(9)  { background: var(--bg) }
 div#artificial.mood-sad emoji e:nth-child(10) { background: var(--bg) }
 div#artificial.mood-sad emoji e:nth-child(11) { background: var(--bg) }
+div#artificial.mood-sad emoji e:nth-child(34) { background: var(--bg) }
 
 div#artificial.mood-sad emoji e:nth-child(76) { background: var(--bg) }
 div#artificial.mood-sad emoji e:nth-child(65) { background: var(--bg) }
@@ -206,35 +220,13 @@ div#artificial.mood-sad emoji e:nth-child(81) { background: var(--bg) }
 /* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
 /*               Neutral Emoji                 */
 /* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
-div#artificial.mood-neutral emoji {
-    --bg: rgba( 255, 255, 255, 0.7 );
-    animation: neutral 0.8s linear -1s infinite alternate;
-}
+div#artificial.mood-neutral emoji { display: none }
 
-div#artificial.mood-neutral   div#orbiter div { mix-blend-mode: exclusion  }
+div#artificial.mood-neutral   div#orbiter div { mix-blend-mode: color-dodge  }
 
-div#artificial.mood-neutral   div { background: rgba( 80,   80, 200, 1.0) }
-div#artificial.mood-neutral       { background: rgba( 10,   10, 100, 1.0) }
+div#artificial.mood-neutral   div { background: rgba( 100,   180, 240, 1.0) }
+div#artificial.mood-neutral       { background: rgba( 10,   180, 240, 1.0) }
 
-div#artificial.mood-neutral emoji e:nth-child(2) { background: var(--bg) }
-div#artificial.mood-neutral emoji e:nth-child(3)  { background: var(--bg) }
-div#artificial.mood-neutral emoji e:nth-child(4)  { background: var(--bg) }
-
-div#artificial.mood-neutral emoji e:nth-child(9) { background: var(--bg) }
-div#artificial.mood-neutral emoji e:nth-child(10) { background: var(--bg) }
-div#artificial.mood-neutral emoji e:nth-child(11) { background: var(--bg) }
-
-div#artificial.mood-neutral emoji e:nth-child(76) { background: var(--bg) }
-div#artificial.mood-neutral emoji e:nth-child(65) { background: var(--bg) }
-div#artificial.mood-neutral emoji e:nth-child(66) { background: var(--bg) }
-div#artificial.mood-neutral emoji e:nth-child(67) { background: var(--bg) }
-div#artificial.mood-neutral emoji e:nth-child(68) { background: var(--bg) }
-div#artificial.mood-neutral emoji e:nth-child(81) { background: var(--bg) }
-
-@keyframes neutral {
-    0%    { transform: translateX(12px) scaleX(1.00) }
-    100%  { transform: translateX(-12px) scaleX(1.00) }
-}
 
 div#orbiter {
     text-align: center;
@@ -253,13 +245,22 @@ div#orbiter div {
     transform-style: preserve-3d;
     border-radius: 600px;
     animation:
-        orbit calc( var(--child) * 0.9s + 1.6s) linear calc(var(--child) * -8s) infinite;
+        orbit calc( var(--child) * 0.9s + 1.6s)
+        linear calc(var(--child) * -8s) infinite;
 }
 
 div#artificial.talking div#orbiter div div {
     border-radius: 6px;
     animation:
-        talking calc( var(--child) * 0.2s - 0.0s) linear calc(var(--child) * -8s) infinite;
+        talking calc( var(--child) * 0.2s - 0.0s)
+        linear calc(var(--child) * -8s) infinite;
+}
+
+div#artificial.listening div#orbiter div div {
+    border-radius: 6px;
+    animation:
+        listening calc( var(--child) * 0.8s - 0.0s)
+        ease-in-out calc(var(--child) * -8s) infinite alternate;
 }
 
 /* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
@@ -275,6 +276,11 @@ div#artificial.talking div#orbiter div div {
     0%    { transform: scale(0.4) }
     10%   { transform: scale3d(6.5, 3.5, 3.5) }
     100%  { transform: scale(-1.0) }
+}
+
+@keyframes listening {
+    0%    { transform: scale(5.4) }
+    100%  { transform: scale(-0.2) }
 }
 
 /* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */

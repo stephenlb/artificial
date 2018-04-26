@@ -3,7 +3,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-<div id="artificial" class="mood-mad talking">
+<div id="artificial" class="mood-happy talking">
     <div id="orbiter">
         <div><div></div><div></div></div>
         <div><div></div><div></div></div>
@@ -145,13 +145,13 @@ div#artificial.mood-mad   div#orbiter div { mix-blend-mode: screen }
 div#artificial.mood-mad   div { background: rgba(200,  120,  20, 1.0) }
 div#artificial.mood-mad       { background: rgba(200,   10,  10, 1.0) }
 
-div#artificial.mood-mad emoji e:nth-child(1) { background: var(--bg) }
+div#artificial.mood-mad emoji e:nth-child(1)  { background: var(--bg) }
 div#artificial.mood-mad emoji e:nth-child(2)  { background: var(--bg) }
 div#artificial.mood-mad emoji e:nth-child(3)  { background: var(--bg) }
-div#artificial.mood-mad emoji e:nth-child(4) { background: var(--bg) }
+div#artificial.mood-mad emoji e:nth-child(4)  { background: var(--bg) }
 div#artificial.mood-mad emoji e:nth-child(15) { background: var(--bg) }
 
-div#artificial.mood-mad emoji e:nth-child(9) { background: var(--bg) }
+div#artificial.mood-mad emoji e:nth-child(9)  { background: var(--bg) }
 div#artificial.mood-mad emoji e:nth-child(10) { background: var(--bg) }
 div#artificial.mood-mad emoji e:nth-child(11) { background: var(--bg) }
 div#artificial.mood-mad emoji e:nth-child(12) { background: var(--bg) }
@@ -175,7 +175,7 @@ div#artificial.mood-mad emoji e:nth-child(81) { background: var(--bg) }
 /* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
 div#artificial.mood-sad emoji {
     --bg: rgba( 255, 255, 255, 0.7 );
-    animation: sad 0.4s ease-in-out -1s infinite alternate;
+    animation: sad 0.8s linear -1s infinite alternate;
 }
 
 div#artificial.mood-sad   div#orbiter div { mix-blend-mode: exclusion  }
@@ -185,23 +185,55 @@ div#artificial.mood-sad       { background: rgba( 10,   10, 100, 1.0) }
 
 div#artificial.mood-sad emoji e:nth-child(2)  { background: var(--bg) }
 div#artificial.mood-sad emoji e:nth-child(3)  { background: var(--bg) }
+div#artificial.mood-sad emoji e:nth-child(4)  { background: var(--bg) }
+
+div#artificial.mood-sad emoji e:nth-child(9)  { background: var(--bg) }
 div#artificial.mood-sad emoji e:nth-child(10) { background: var(--bg) }
 div#artificial.mood-sad emoji e:nth-child(11) { background: var(--bg) }
-div#artificial.mood-sad emoji e:nth-child(13) { background: var(--bg) }
-div#artificial.mood-sad emoji e:nth-child(16) { background: var(--bg) }
-div#artificial.mood-sad emoji e:nth-child(21) { background: var(--bg) }
-div#artificial.mood-sad emoji e:nth-child(24) { background: var(--bg) }
-div#artificial.mood-sad emoji e:nth-child(64) { background: var(--bg) }
-div#artificial.mood-sad emoji e:nth-child(69) { background: var(--bg) }
-div#artificial.mood-sad emoji e:nth-child(77) { background: var(--bg) }
-div#artificial.mood-sad emoji e:nth-child(78) { background: var(--bg) }
-div#artificial.mood-sad emoji e:nth-child(79) { background: var(--bg) }
-div#artificial.mood-sad emoji e:nth-child(80) { background: var(--bg) }
+
+div#artificial.mood-sad emoji e:nth-child(76) { background: var(--bg) }
+div#artificial.mood-sad emoji e:nth-child(65) { background: var(--bg) }
+div#artificial.mood-sad emoji e:nth-child(66) { background: var(--bg) }
+div#artificial.mood-sad emoji e:nth-child(67) { background: var(--bg) }
+div#artificial.mood-sad emoji e:nth-child(68) { background: var(--bg) }
+div#artificial.mood-sad emoji e:nth-child(81) { background: var(--bg) }
 
 @keyframes sad {
-    0%    { transform: translateY(0px) scaleY(1.0) }
-    50%   { transform: translateY(0px) scaleY(1.0) }
-    100%  { transform: translateY(0px) scaleY(1.0) }
+    0%    { transform: translateX(12px) scaleX(1.00) }
+    100%  { transform: translateX(-12px) scaleX(1.00) }
+}
+
+/* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
+/*               Neutral Emoji                 */
+/* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
+div#artificial.mood-neutral emoji {
+    --bg: rgba( 255, 255, 255, 0.7 );
+    animation: neutral 0.8s linear -1s infinite alternate;
+}
+
+div#artificial.mood-neutral   div#orbiter div { mix-blend-mode: exclusion  }
+
+div#artificial.mood-neutral   div { background: rgba( 80,   80, 200, 1.0) }
+div#artificial.mood-neutral       { background: rgba( 10,   10, 100, 1.0) }
+
+div#artificial.mood-neutral emoji e:nth-child(2) { background: var(--bg) }
+div#artificial.mood-neutral emoji e:nth-child(3)  { background: var(--bg) }
+div#artificial.mood-neutral emoji e:nth-child(4)  { background: var(--bg) }
+
+div#artificial.mood-neutral emoji e:nth-child(9) { background: var(--bg) }
+div#artificial.mood-neutral emoji e:nth-child(10) { background: var(--bg) }
+div#artificial.mood-neutral emoji e:nth-child(11) { background: var(--bg) }
+
+div#artificial.mood-neutral emoji e:nth-child(76) { background: var(--bg) }
+div#artificial.mood-neutral emoji e:nth-child(65) { background: var(--bg) }
+div#artificial.mood-neutral emoji e:nth-child(66) { background: var(--bg) }
+div#artificial.mood-neutral emoji e:nth-child(67) { background: var(--bg) }
+div#artificial.mood-neutral emoji e:nth-child(68) { background: var(--bg) }
+div#artificial.mood-neutral emoji e:nth-child(81) { background: var(--bg) }
+
+@keyframes neutral {
+    0%    { transform: translateX(12px) scaleX(1.00) }
+    100%  { transform: translateX(-12px) scaleX(1.00) }
 }
 
 div#orbiter {

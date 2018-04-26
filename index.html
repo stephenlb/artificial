@@ -22,14 +22,15 @@ body {
     margin: 0;
 }
 
-div#artificial.mood-happy div { background: rgba(228,  100, 200, 1.0) }
-div#artificial.mood-happy     { background: rgba(105,   50, 160, 0.9) }
-div#artificial.mood-mad   div { background: rgba(200,  100,   5, 1.0) }
-div#artificial.mood-mad       { background: rgba(200,    0,   0, 1.0) }
-div#artificial.mood-sad   div { background: rgba(  0,  200, 255, 1.0) }
-div#artificial.mood-sad       { background: rgba(  0,  100, 200, 1.0) }
+div#artificial.mood-happy div { background: rgba(128,  170, 140, 1.0) }
+div#artificial.mood-happy     { background: rgba(175,   50, 150, 0.9) }
+div#artificial.mood-mad   div { background: rgba(200,  120,  20, 1.0) }
+div#artificial.mood-mad       { background: rgba(200,   10,  10, 1.0) }
+div#artificial.mood-sad   div { background: rgba( 80,   80, 200, 1.0) }
+div#artificial.mood-sad       { background: rgba( 10,   40, 180, 1.0) }
 
 div#artificial {
+    position: relative;
     display: flex;
     flex-direction: column;
     flex-flow: column wrap;
@@ -57,8 +58,8 @@ div#orbiter div {
     position: absolute;
     width:  calc( var(--child) * 10px + 40px);
     height: calc( var(--child) * 10px + 40px);
-    filter: blur(calc( var(--child) * 1px + 8px));
-    mix-blend-mode: screen;
+    filter: blur(calc( var(--child) * 8px + 8px));
+    mix-blend-mode: color-dodge;
     transform-style: preserve-3d;
     border-radius: 600px;
     animation:

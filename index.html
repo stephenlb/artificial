@@ -3,7 +3,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-<div id="artificial" class="mood-happy talking">
+<div id="artificial" class="mood-mad talking">
     <div id="orbiter">
         <div><div></div><div></div></div>
         <div><div></div><div></div></div>
@@ -54,6 +54,19 @@ div#panel {
     /* TODO */
 }
 
+div#artificial {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    height: 100%;
+    transition: background 1s;
+}
+
+
 /* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
 /*               EMOOOOOOJIIIIIII              */
 /* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
@@ -84,10 +97,19 @@ emoji e {
 div#artificial.talking emoji {
     display: flex;
 }
+
+/* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
+/*                 Happy Emoji                 */
+/* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
 div#artificial.mood-happy emoji {
     --bg: rgba( 255, 255, 255, 0.7 );
     animation: happy 0.4s ease-in-out -1s infinite alternate;
 }
+
+div#artificial.mood-happy div#orbiter div { mix-blend-mode: color-dodge  }
+
+div#artificial.mood-happy div { background: rgba(128,    0, 140, 1.0) }
+div#artificial.mood-happy     { background: rgba(175,   50, 150, 0.9) }
 
 div#artificial.mood-happy emoji e:nth-child(2)  { background: var(--bg) }
 div#artificial.mood-happy emoji e:nth-child(3)  { background: var(--bg) }
@@ -97,7 +119,6 @@ div#artificial.mood-happy emoji e:nth-child(13) { background: var(--bg) }
 div#artificial.mood-happy emoji e:nth-child(16) { background: var(--bg) }
 div#artificial.mood-happy emoji e:nth-child(21) { background: var(--bg) }
 div#artificial.mood-happy emoji e:nth-child(24) { background: var(--bg) }
-
 div#artificial.mood-happy emoji e:nth-child(64) { background: var(--bg) }
 div#artificial.mood-happy emoji e:nth-child(69) { background: var(--bg) }
 div#artificial.mood-happy emoji e:nth-child(77) { background: var(--bg) }
@@ -105,28 +126,83 @@ div#artificial.mood-happy emoji e:nth-child(78) { background: var(--bg) }
 div#artificial.mood-happy emoji e:nth-child(79) { background: var(--bg) }
 div#artificial.mood-happy emoji e:nth-child(80) { background: var(--bg) }
 
-div#artificial.mood-happy div { background: rgba(128,    0, 140, 1.0) }
-div#artificial.mood-happy     { background: rgba(175,   50, 150, 0.9) }
+@keyframes happy {
+    0%    { transform: translateY(-20px) scaleY(1.0) }
+    50%   { transform: translateY(20px)  scaleY(0.96) }
+    100%  { transform: translateY(60px)   scaleY(1.0) }
+}
+
+/* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
+/*                  Mad Emoji                  */
+/* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
+div#artificial.mood-mad emoji {
+    --bg: rgba( 255, 255, 255, 0.7 );
+    animation: mad 0.1s ease-out -1s infinite alternate;
+}
+
+div#artificial.mood-mad   div#orbiter div { mix-blend-mode: screen }
+
 div#artificial.mood-mad   div { background: rgba(200,  120,  20, 1.0) }
 div#artificial.mood-mad       { background: rgba(200,   10,  10, 1.0) }
+
+div#artificial.mood-mad emoji e:nth-child(1) { background: var(--bg) }
+div#artificial.mood-mad emoji e:nth-child(2)  { background: var(--bg) }
+div#artificial.mood-mad emoji e:nth-child(3)  { background: var(--bg) }
+div#artificial.mood-mad emoji e:nth-child(4) { background: var(--bg) }
+div#artificial.mood-mad emoji e:nth-child(15) { background: var(--bg) }
+
+div#artificial.mood-mad emoji e:nth-child(9) { background: var(--bg) }
+div#artificial.mood-mad emoji e:nth-child(10) { background: var(--bg) }
+div#artificial.mood-mad emoji e:nth-child(11) { background: var(--bg) }
+div#artificial.mood-mad emoji e:nth-child(12) { background: var(--bg) }
+div#artificial.mood-mad emoji e:nth-child(22) { background: var(--bg) }
+
+div#artificial.mood-mad emoji e:nth-child(76) { background: var(--bg) }
+div#artificial.mood-mad emoji e:nth-child(77) { background: var(--bg) }
+div#artificial.mood-mad emoji e:nth-child(78) { background: var(--bg) }
+div#artificial.mood-mad emoji e:nth-child(79) { background: var(--bg) }
+div#artificial.mood-mad emoji e:nth-child(80) { background: var(--bg) }
+div#artificial.mood-mad emoji e:nth-child(81) { background: var(--bg) }
+
+@keyframes mad {
+    0%    { transform: translateY(0px) scaleY(1.01) }
+    50%   { transform: translateY(0px) scaleX(0.98) }
+    100%  { transform: translateY(0px) scaleY(1.02) }
+}
+
+/* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
+/*                  Sad Emoji                  */
+/* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
+div#artificial.mood-sad emoji {
+    --bg: rgba( 255, 255, 255, 0.7 );
+    animation: sad 0.4s ease-in-out -1s infinite alternate;
+}
+
+div#artificial.mood-sad   div#orbiter div { mix-blend-mode: exclusion  }
+
 div#artificial.mood-sad   div { background: rgba( 80,   80, 200, 1.0) }
 div#artificial.mood-sad       { background: rgba( 10,   10, 100, 1.0) }
 
-div#artificial {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    flex-flow: column wrap;
-    align-items: center;
-    justify-content: center;
-    align-content: center;
-    height: 100%;
-    transition: background 1s;
-}
+div#artificial.mood-sad emoji e:nth-child(2)  { background: var(--bg) }
+div#artificial.mood-sad emoji e:nth-child(3)  { background: var(--bg) }
+div#artificial.mood-sad emoji e:nth-child(10) { background: var(--bg) }
+div#artificial.mood-sad emoji e:nth-child(11) { background: var(--bg) }
+div#artificial.mood-sad emoji e:nth-child(13) { background: var(--bg) }
+div#artificial.mood-sad emoji e:nth-child(16) { background: var(--bg) }
+div#artificial.mood-sad emoji e:nth-child(21) { background: var(--bg) }
+div#artificial.mood-sad emoji e:nth-child(24) { background: var(--bg) }
+div#artificial.mood-sad emoji e:nth-child(64) { background: var(--bg) }
+div#artificial.mood-sad emoji e:nth-child(69) { background: var(--bg) }
+div#artificial.mood-sad emoji e:nth-child(77) { background: var(--bg) }
+div#artificial.mood-sad emoji e:nth-child(78) { background: var(--bg) }
+div#artificial.mood-sad emoji e:nth-child(79) { background: var(--bg) }
+div#artificial.mood-sad emoji e:nth-child(80) { background: var(--bg) }
 
-div#artificial.mood-happy div#orbiter div { mix-blend-mode: color-dodge  }
-div#artificial.mood-mad   div#orbiter div { mix-blend-mode: screen }
-div#artificial.mood-sad   div#orbiter div { mix-blend-mode: exclusion  }
+@keyframes sad {
+    0%    { transform: translateY(0px) scaleY(1.0) }
+    50%   { transform: translateY(0px) scaleY(1.0) }
+    100%  { transform: translateY(0px) scaleY(1.0) }
+}
 
 div#orbiter {
     text-align: center;
@@ -167,12 +243,6 @@ div#artificial.talking div#orbiter div div {
     0%    { transform: scale(0.4) }
     10%   { transform: scale3d(6.5, 3.5, 3.5) }
     100%  { transform: scale(-1.0) }
-}
-
-@keyframes happy {
-    0%    { transform: translateY(-20px) scaleY(1.0) }
-    50%   { transform: translateY(20px)  scaleY(0.96) }
-    100%  { transform: translateY(60px)   scaleY(1.0) }
 }
 
 /* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */

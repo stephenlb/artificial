@@ -1,61 +1,117 @@
-<div id="artificial">
+<div id="artificial" class="mood-happy">
     <div id="orbiter">
-        <div></div><div></div>
-        <div></div><div></div>
-        <div></div><div></div>
-        <div></div><div></div>
-        <div></div><div></div>
-        <div></div><div></div>
-        <div></div><div></div>
-        <div></div><div></div>
+        <div><div></div><div></div></div>
+        <div><div></div><div></div></div>
+        <div><div></div><div></div></div>
+        <div><div></div><div></div></div>
+        <div><div></div><div></div></div>
+        <div><div></div><div></div></div>
+    </div>
+    <div id="panel">
+        jasflkjaslkdfjlkasjdfk
     </div>
 </div>
 
 <style>
 
-div#orbiter div:nth-child(1)  { --depth: 1  }
-div#orbiter div:nth-child(2)  { --depth: 2  }
-div#orbiter div:nth-child(3)  { --depth: 3  }
-div#orbiter div:nth-child(4)  { --depth: 4  }
-div#orbiter div:nth-child(5)  { --depth: 5  }
-div#orbiter div:nth-child(6)  { --depth: 6  }
-div#orbiter div:nth-child(7)  { --depth: 7  }
-div#orbiter div:nth-child(8)  { --depth: 8  }
-div#orbiter div:nth-child(9)  { --depth: 9  }
-div#orbiter div:nth-child(10) { --depth: 10 }
-div#orbiter div:nth-child(11) { --depth: 11 }
-div#orbiter div:nth-child(12) { --depth: 12 }
-div#orbiter div:nth-child(13) { --depth: 13 }
-div#orbiter div:nth-child(14) { --depth: 14 }
-div#orbiter div:nth-child(15) { --depth: 15 }
-div#orbiter div:nth-child(16) { --depth: 16 }
-
-div#artificial {
-    background: red;
-    position: relative;
-}
 body {  background: url(https://cdn.dribbble.com/users/32512/screenshots/3377573/sleep_mode_by_gleb_for_rokid.gif);}
 body {
     background: black;
-    mix-blend-mode: color-dodge;
-}
-div#orbiter div {
-    position: absolute;
-    left: 380px;
-    top: 380px;
-    width:  calc( var(--depth) * 1px + 40px);
-    height: calc( var(--depth) * 10px + 40px);
-    filter: blur(calc( var(--depth) * 2px + 6px));
-    mix-blend-mode: screen;
-    mix-blend-mode: exclusion;
-    border-radius: 100px;
-    /*isolation: isolate;*/
-    animation: orbit calc( var(--depth) * 0.6s + 1.0s) linear calc(var(--depth) * -8s) infinite;
-    background: rgba(128,0,255,1.0);
+    padding: 0;
+    border: 0;
+    margin: 0;
 }
 
-@keyframes orbit {
-    0%    { transform: rotate(0deg)   translateY(100px) }
-    50%   { transform: rotate(180deg) translateY(-260px) }
-    100%  { transform: rotate(360deg) translateY(100px) }
+div#artificial.mood-happy div { background: rgba(228,  100, 200, 1.0) }
+div#artificial.mood-happy     { background: rgba(105,   50, 160, 0.9) }
+div#artificial.mood-mad   div { background: rgba(200,  100,   5, 1.0) }
+div#artificial.mood-mad       { background: rgba(200,    0,   0, 1.0) }
+div#artificial.mood-sad   div { background: rgba(  0,  200, 255, 1.0) }
+div#artificial.mood-sad       { background: rgba(  0,  100, 200, 1.0) }
+
+div#artificial {
+    display: flex;
+    flex-direction: column;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    height: 100%;
+    transition: background 1s;
 }
+
+div#orbiter {
+    /*align-self: flex-end;
+    align-self: flex-start;*/
+    text-align: center;
+    background: yellow;
+    height: 0px;
+    width: 0px;
+    margin: auto;
+}
+div#panel {
+}
+
+div#orbiter div {
+    display: inline-block;
+    position: absolute;
+    width:  calc( var(--child) * 10px + 40px);
+    height: calc( var(--child) * 10px + 40px);
+    filter: blur(calc( var(--child) * 1px + 8px));
+    mix-blend-mode: screen;
+    transform-style: preserve-3d;
+    border-radius: 600px;
+    animation:
+        orbit calc( var(--child) * 0.9s + 1.6s) linear calc(var(--child) * -8s) infinite;
+}
+div#orbiter.talking div div {
+    border-radius: 6px;
+    animation:
+        talking calc( var(--child) * 0.2s - 0.0s) linear calc(var(--child) * -8s) infinite;
+}
+
+/* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
+/*             Animation Keyframes             */
+/* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
+@keyframes orbit {
+    0%    { transform: rotate(0deg)   translateY(60px)  }
+    50%   { transform: rotate(180deg) translateY(90px) }
+    100%  { transform: rotate(360deg) translateY(60px)  }
+}
+
+@keyframes talking {
+    0%    { transform: scale(0.4) }
+    10%   { transform: scale3d(4.5, 2.5, 30.5) }
+    100%  { transform: scale(-1.0) }
+}
+
+/* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
+/*    Enumerate children for css variables     */
+/* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
+div#artificial div:nth-child(1)  { --child: 1  }
+div#artificial div:nth-child(2)  { --child: 2  }
+div#artificial div:nth-child(3)  { --child: 3  }
+div#artificial div:nth-child(4)  { --child: 4  }
+div#artificial div:nth-child(5)  { --child: 5  }
+div#artificial div:nth-child(6)  { --child: 6  }
+div#artificial div:nth-child(7)  { --child: 7  }
+div#artificial div:nth-child(8)  { --child: 8  }
+div#artificial div:nth-child(9)  { --child: 9  }
+div#artificial div:nth-child(10) { --child: 10 }
+div#artificial div:nth-child(11) { --child: 11 }
+div#artificial div:nth-child(12) { --child: 12 }
+div#artificial div:nth-child(13) { --child: 13 }
+div#artificial div:nth-child(14) { --child: 14 }
+div#artificial div:nth-child(15) { --child: 15 }
+div#artificial div:nth-child(16) { --child: 16 }
+
+</style>
+
+<script>(()=>{
+    'use strict';
+    const orbiter = document.getElementById('orbiter');
+    setInterval( ()=>{
+        if (orbiter.className.indexOf('talking') > -1) orbiter.className = ' ';
+        else                                           orbiter.className = 'talking';
+    }, 2000 );
+})()</script>

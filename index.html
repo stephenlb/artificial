@@ -1,13 +1,9 @@
-<div id="artificial" class="mood-mad">
+<div id="artificial" class="mood-happy">
     <div id="orbiter">
         <div><div></div><div></div></div>
         <div><div></div><div></div></div>
-        <div><div></div><div></div></div>
-        <div><div></div><div></div></div>
-        <div><div></div><div></div></div>
-        <div><div></div><div></div></div>
     </div>
-    <emoji class="smile">
+    <emoji>
         <e></e><e></e><e></e><e></e><e></e><e></e><e></e><e></e><e></e><e></e>
         <e></e><e></e><e></e><e></e><e></e><e></e><e></e><e></e><e></e><e></e>
         <e></e><e></e><e></e><e></e><e></e><e></e><e></e><e></e><e></e><e></e>
@@ -44,6 +40,7 @@ body {
 }
 
 div#panel {
+    display: none;
     /* TODO */
     /* TODO */
     /* TODO */
@@ -54,39 +51,53 @@ div#panel {
 /* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
 emoji {
     position: absolute;
-    height: 100%;
-    display: flex;
+    display: none;
     flex-wrap: wrap;
-    max-width: 750px;
-    min-width: 750px;
-    width: 750px;
-    border: 1px solid yellow;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     align-content: center;
     margin: auto;
+    max-width: 750px;
+    min-width: 750px;
+    width: 750px;
+    height: 100%;
     background: transparent;
+    
 }
 emoji e {
     display: block;
     width: 50px;
     height: 50px;
-    border: 1px solid rgba( 0, 0, 0, 0.5 );
+    margin: 1px;
+    /*border: 1px solid rgba( 0, 0, 0, 0.9 );*/
     background-color: rgba( 255, 255, 255, 0.0 );
 }
-emoji.smile {
-    --bg: rgba( 255, 255, 255, 0.8 );
+
+div#artificial.talking emoji {
+    display: flex;
+}
+div#artificial.mood-happy emoji {
+    --bg: rgba( 255, 255, 255, 0.7 );
+    animation: happy 0.4s ease-in-out -1s infinite alternate;
 }
 
-emoji.smile e:nth-child(4)  { background: var(--bg) }
-emoji.smile e:nth-child(5)  { background: var(--bg) }
-emoji.smile e:nth-child(11) { background: var(--bg) }
-emoji.smile e:nth-child(12) { background: var(--bg) }
-emoji.smile e:nth-child(17) { background: var(--bg) }
-emoji.smile e:nth-child(20) { background: var(--bg) }
-emoji.smile e:nth-child(24) { background: var(--bg) }
-emoji.smile e:nth-child(27) { background: var(--bg) }
+div#artificial.mood-happy emoji e:nth-child(4)  { background: var(--bg) }
+div#artificial.mood-happy emoji e:nth-child(5)  { background: var(--bg) }
+div#artificial.mood-happy emoji e:nth-child(11) { background: var(--bg) }
+div#artificial.mood-happy emoji e:nth-child(12) { background: var(--bg) }
+div#artificial.mood-happy emoji e:nth-child(17) { background: var(--bg) }
+div#artificial.mood-happy emoji e:nth-child(20) { background: var(--bg) }
+div#artificial.mood-happy emoji e:nth-child(24) { background: var(--bg) }
+div#artificial.mood-happy emoji e:nth-child(27) { background: var(--bg) }
+
+div#artificial.mood-happy emoji e:nth-child(61) { background: var(--bg) }
+div#artificial.mood-happy emoji e:nth-child(67) { background: var(--bg) }
+div#artificial.mood-happy emoji e:nth-child(76) { background: var(--bg) }
+div#artificial.mood-happy emoji e:nth-child(77) { background: var(--bg) }
+div#artificial.mood-happy emoji e:nth-child(78) { background: var(--bg) }
+div#artificial.mood-happy emoji e:nth-child(79) { background: var(--bg) }
+div#artificial.mood-happy emoji e:nth-child(80) { background: var(--bg) }
 
 div#artificial.mood-happy div { background: rgba(128,  170, 140, 1.0) }
 div#artificial.mood-happy     { background: rgba(175,   50, 150, 0.9) }
@@ -108,12 +119,6 @@ div#artificial {
 }
 
 div#orbiter {
-
-    display: none; /* !!!!!!!!!!!! */
-    display: none; /* !!!!!!!!!!!! */
-    display: none; /* !!!!!!!!!!!! */
-    display: none; /* !!!!!!!!!!!! */
-
     text-align: center;
     background: yellow;
     height: 0px;
@@ -133,7 +138,7 @@ div#orbiter div {
     animation:
         orbit calc( var(--child) * 0.9s + 1.6s) linear calc(var(--child) * -8s) infinite;
 }
-div#orbiter.talking div div {
+div#artificial.talking div#orbiter div div {
     border-radius: 6px;
     animation:
         talking calc( var(--child) * 0.2s - 0.0s) linear calc(var(--child) * -8s) infinite;
@@ -152,6 +157,12 @@ div#orbiter.talking div div {
     0%    { transform: scale(0.4) }
     10%   { transform: scale3d(6.5, 3.5, 3.5) }
     100%  { transform: scale(-1.0) }
+}
+
+@keyframes happy {
+    0%    { transform: translateY(-20px) scaleY(1.0) }
+    50%   { transform: translateY(20px)  scaleY(0.96) }
+    100%  { transform: translateY(60px)   scaleY(1.0) }
 }
 
 /* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
@@ -178,9 +189,10 @@ div#artificial div:nth-child(16) { --child: 16 }
 
 <script>(()=>{
     'use strict';
-    const orbiter = document.getElementById('orbiter');
+    const orbiter = document.getElementById('artificial');
+    let   mood    = orbiter.className;
     setInterval( ()=>{
-        if (orbiter.className.indexOf('talking') > -1) orbiter.className = ' ';
-        else                                           orbiter.className = 'talking';
+        if (orbiter.className.indexOf('talking') > -1) orbiter.className = mood;
+        else                                           orbiter.className = mood + ' talking';
     }, 2000 );
 })()</script>

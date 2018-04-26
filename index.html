@@ -1,4 +1,4 @@
-<div id="artificial" class="mood-happy">
+<div id="artificial" class="mood-mad">
     <div id="orbiter">
         <div><div></div><div></div></div>
         <div><div></div><div></div></div>
@@ -99,12 +99,12 @@ div#artificial.mood-happy emoji e:nth-child(78) { background: var(--bg) }
 div#artificial.mood-happy emoji e:nth-child(79) { background: var(--bg) }
 div#artificial.mood-happy emoji e:nth-child(80) { background: var(--bg) }
 
-div#artificial.mood-happy div { background: rgba(128,  170, 140, 1.0) }
+div#artificial.mood-happy div { background: rgba(128,    0, 140, 1.0) }
 div#artificial.mood-happy     { background: rgba(175,   50, 150, 0.9) }
 div#artificial.mood-mad   div { background: rgba(200,  120,  20, 1.0) }
 div#artificial.mood-mad       { background: rgba(200,   10,  10, 1.0) }
 div#artificial.mood-sad   div { background: rgba( 80,   80, 200, 1.0) }
-div#artificial.mood-sad       { background: rgba( 10,   40, 180, 1.0) }
+div#artificial.mood-sad       { background: rgba( 10,   10, 100, 1.0) }
 
 div#artificial {
     position: relative;
@@ -117,6 +117,10 @@ div#artificial {
     height: 100%;
     transition: background 1s;
 }
+
+div#artificial.mood-happy div#orbiter div { mix-blend-mode: color-dodge  }
+div#artificial.mood-mad   div#orbiter div { mix-blend-mode: screen }
+div#artificial.mood-sad   div#orbiter div { mix-blend-mode: exclusion  }
 
 div#orbiter {
     text-align: center;
@@ -132,12 +136,12 @@ div#orbiter div {
     width:  calc( var(--child) * 10px + 40px);
     height: calc( var(--child) * 10px + 40px);
     filter: blur(calc( var(--child) * 8px + 8px));
-    mix-blend-mode: color-dodge;
     transform-style: preserve-3d;
     border-radius: 600px;
     animation:
         orbit calc( var(--child) * 0.9s + 1.6s) linear calc(var(--child) * -8s) infinite;
 }
+
 div#artificial.talking div#orbiter div div {
     border-radius: 6px;
     animation:
@@ -194,5 +198,5 @@ div#artificial div:nth-child(16) { --child: 16 }
     setInterval( ()=>{
         if (orbiter.className.indexOf('talking') > -1) orbiter.className = mood;
         else                                           orbiter.className = mood + ' talking';
-    }, 2000 );
+    }, 4000 );
 })()</script>

@@ -34,7 +34,7 @@ div#artificial {
         lehAAAAGklEQVQImW\P4//+/CBMDAwMDhPj79x8DtQEAJV8GEPQ\
         i6p0AAAAASUVORK5CYII=');
     background-repeat: repeat;
-    background-size: 20px 400px;
+    background-size: 20px 20px;
     background-position: 0px 8px;
     transform-style: preserve-3d;
     backface-visibility: hidden;
@@ -81,7 +81,7 @@ div#artificial.mood-happy emoji {
 
 div#artificial.mood-happy div#orbiter div { mix-blend-mode: color-dodge  }
 
-div#artificial.mood-happy div { background:       rgba(255, 200, 255, 1.0) }
+div#artificial.mood-happy div { background:       rgba(220, 200, 255, 1.0) }
 div#artificial.mood-happy     { background-color: rgba(20,    8,  30, 1.0) }
 
 div#artificial.mood-happy emoji e:nth-child(2)  { background: var(--bg) }
@@ -119,7 +119,7 @@ div#artificial.mood-mad emoji {
 
 div#artificial.mood-mad   div#orbiter div { mix-blend-mode: color-dodge }
 
-div#artificial.mood-mad   div { background:       rgba(255,  120,  20, 1.0) }
+div#artificial.mood-mad   div { background:       rgba(200,  120,  20, 1.0) }
 div#artificial.mood-mad       { background-color: rgba( 20,   10,  10, 1.0) }
 
 div#artificial.mood-mad emoji e:nth-child(1)  { background: var(--bg) }
@@ -161,7 +161,7 @@ div#artificial.mood-sad emoji {
 
 div#artificial.mood-sad   div#orbiter div { mix-blend-mode: color-dodge  }
 
-div#artificial.mood-sad   div { background:       rgba( 180,   180, 255, 1.0) }
+div#artificial.mood-sad   div { background:       rgba( 180,   180, 220, 1.0) }
 div#artificial.mood-sad       { background-color: rgba( 10,    0,  10, 1.0) }
 
 div#artificial.mood-sad emoji e:nth-child(2)  { background: var(--bg) }
@@ -198,7 +198,7 @@ div#artificial.mood-neutral emoji { display: none }
 
 div#artificial.mood-neutral   div#orbiter div { mix-blend-mode: color-dodge  }
 
-div#artificial.mood-neutral   div { background:       rgba( 100,  180, 240, 1.0) }
+div#artificial.mood-neutral   div { background:       rgba( 100,  180, 230, 1.0) }
 div#artificial.mood-neutral       { background-color: rgba( 10,    10,  20, 1.0) }
 
 /* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */

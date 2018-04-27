@@ -2,14 +2,16 @@
 /*                 Base Styles                 */
 /* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
 html, body {
-    overflow: hidden;
-}
-
-body {
     background: black;
+    overflow: hiddenl;
     padding: 0;
     border: 0;
     margin: 0;
+    /*
+    background: transparent
+        url('data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAADElEQVQIHWNY1lsAAAOAAaQACGUoAAAAAElFTkSuQmCC')
+        repeat-y 10px 10px;
+        */
 }
 
 div#panel {
@@ -71,20 +73,10 @@ div#artificial.mood-happy emoji {
     animation: happy 0.4s ease-in-out -1s infinite alternate;
 }
 
-div#artificial.mood-happy div#orbiter div { mix-blend-mode: color-burn  }
-
-div#artificial.mood-happy div#orbiter div { mix-blend-mode: darken  }
-div#artificial.mood-happy div#orbiter div { mix-blend-mode: luminosity  }
-div#artificial.mood-happy div#orbiter div { mix-blend-mode: hue  }
-div#artificial.mood-happy div#orbiter div { mix-blend-mode: soft-light  }
-div#artificial.mood-happy div#orbiter div { mix-blend-mode: hard-light  }
-div#artificial.mood-happy div#orbiter div { mix-blend-mode: lighten  }
-div#artificial.mood-happy div#orbiter div { mix-blend-mode: overlay  }
-div#artificial.mood-happy div#orbiter div { mix-blend-mode: screen  }
 div#artificial.mood-happy div#orbiter div { mix-blend-mode: color-dodge  }
 
-div#artificial.mood-happy div { background: rgba(200,   200, 10, 1.0) }
-div#artificial.mood-happy     { background: rgba(190,   90, 190, 0.9) }
+div#artificial.mood-happy div { background: rgba(200, 200, 200, 1.0) }
+div#artificial.mood-happy     { background: rgba(20,    8,  30, 1.0) }
 
 div#artificial.mood-happy emoji e:nth-child(2)  { background: var(--bg) }
 div#artificial.mood-happy emoji e:nth-child(3)  { background: var(--bg) }
@@ -115,10 +107,10 @@ div#artificial.mood-mad emoji {
     animation: mad 0.1s ease-out -1s infinite alternate;
 }
 
-div#artificial.mood-mad   div#orbiter div { mix-blend-mode: screen }
+div#artificial.mood-mad   div#orbiter div { mix-blend-mode: color-dodge }
 
 div#artificial.mood-mad   div { background: rgba(200,  120,  20, 1.0) }
-div#artificial.mood-mad       { background: rgba(200,   10,  10, 1.0) }
+div#artificial.mood-mad       { background: rgba( 20,   10,  10, 1.0) }
 
 div#artificial.mood-mad emoji e:nth-child(1)  { background: var(--bg) }
 div#artificial.mood-mad emoji e:nth-child(2)  { background: var(--bg) }
@@ -153,10 +145,10 @@ div#artificial.mood-sad emoji {
     animation: sad 0.8s linear -1s infinite alternate;
 }
 
-div#artificial.mood-sad   div#orbiter div { mix-blend-mode: exclusion  }
+div#artificial.mood-sad   div#orbiter div { mix-blend-mode: screen  }
 
 div#artificial.mood-sad   div { background: rgba( 80,   80, 200, 1.0) }
-div#artificial.mood-sad       { background: rgba( 10,   10, 100, 1.0) }
+div#artificial.mood-sad       { background: rgba( 10,    0,  10, 1.0) }
 
 div#artificial.mood-sad emoji e:nth-child(2)  { background: var(--bg) }
 div#artificial.mood-sad emoji e:nth-child(3)  { background: var(--bg) }
@@ -176,7 +168,7 @@ div#artificial.mood-sad emoji e:nth-child(68) { background: var(--bg) }
 div#artificial.mood-sad emoji e:nth-child(81) { background: var(--bg) }
 
 @keyframes sad {
-    0%    { transform: translateX(12px) scaleX(1.00) }
+    0%    { transform: translateX(12px)  scaleX(1.00) }
     100%  { transform: translateX(-12px) scaleX(1.00) }
 }
 
@@ -187,10 +179,12 @@ div#artificial.mood-neutral emoji { display: none }
 
 div#artificial.mood-neutral   div#orbiter div { mix-blend-mode: color-dodge  }
 
-div#artificial.mood-neutral   div { background: rgba( 100,   180, 240, 1.0) }
-div#artificial.mood-neutral       { background: rgba( 10,   180, 240, 1.0) }
+div#artificial.mood-neutral   div { background: rgba( 100,  180, 240, 1.0) }
+div#artificial.mood-neutral       { background: rgba( 10,    10,  20, 1.0) }
 
-
+/* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
+/*                  Orbiter                    */
+/* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
 div#orbiter {
     text-align: center;
     background: yellow;
@@ -202,8 +196,8 @@ div#orbiter {
 div#orbiter div {
     display: inline-block;
     position: absolute;
-    width:  calc( var(--child) * 10px + 40px);
-    height: calc( var(--child) * 10px + 40px);
+    width:  calc( var(--child) * 80px + 40px);
+    height: calc( var(--child) * 80px + 40px);
     filter: blur(calc( var(--child) * 8px + 8px));
     transform-style: preserve-3d;
     border-radius: 600px;
@@ -212,7 +206,12 @@ div#orbiter div {
         linear calc(var(--child) * -8s) infinite;
 }
 
-div#artificial.talking div#orbiter div div {
+div#artificial.talking div#orbiter div {
+    width:  calc( var(--child) * 10px + 20px);
+    height: calc( var(--child) * 10px + 20px);
+}
+
+div#artificial.talking div#orbiter div {
     border-radius: 6px;
     animation:
         talking calc( var(--child) * 0.2s - 0.0s)
@@ -224,6 +223,23 @@ div#artificial.listening div#orbiter div div {
     animation:
         listening calc( var(--child) * 0.8s - 0.0s)
         ease-in-out calc(var(--child) * -8s) infinite alternate;
+}
+
+/* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
+/*                   Overlay                   */
+/* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
+div.relative {
+    position: relative;
+}
+div#overlay {
+    position: absolute;
+    z-index: 100;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background: transparent
+        url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAUCAYAAABMDlehAAAAFUlEQVQImWP48+dvExMDA4M4A80AAFvnA5GCwYReAAAAAElFTkSuQmCC')
+        repeat;
 }
 
 /* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */

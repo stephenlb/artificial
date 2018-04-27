@@ -10,7 +10,6 @@ html, body {
     border: 0;
     margin: 0;
     transform-style: preserve-3d;
-    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
 }
 
@@ -30,11 +29,13 @@ div#artificial {
     justify-content: center;
     align-content: center;
     height: 100%;
+    background-position: 0px 16px;
     background-image:
-        url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAUCAYAAABMDlehAAAAGklEQVQImWP4//+/CBMDAwMDhPj79x8DtQEAJV8GEPQi6p0AAAAASUVORK5CYII=');
+        url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAUCAYAAABMD\
+        lehAAAAGklEQVQImW\P4//+/CBMDAwMDhPj79x8DtQEAJV8GEPQ\
+        i6p0AAAAASUVORK5CYII=');
     background-repeat: repeat;
     transform-style: preserve-3d;
-    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
 }
 

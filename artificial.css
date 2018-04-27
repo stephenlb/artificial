@@ -7,11 +7,6 @@ html, body {
     padding: 0;
     border: 0;
     margin: 0;
-    /*
-    background: transparent
-        url('data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAADElEQVQIHWNY1lsAAAOAAaQACGUoAAAAAElFTkSuQmCC')
-        repeat-y 10px 10px;
-        */
 }
 
 div#panel {
@@ -30,7 +25,9 @@ div#artificial {
     justify-content: center;
     align-content: center;
     height: 100%;
-    transition: background 1s;
+    background-image:
+        url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAUCAYAAABMDlehAAAAFUlEQVQImWP48+evNhMDAwMHA80AADXyAyuyV6QWAAAAAElFTkSuQmCC');
+    background-repeat: repeat;
 }
 
 
@@ -75,8 +72,8 @@ div#artificial.mood-happy emoji {
 
 div#artificial.mood-happy div#orbiter div { mix-blend-mode: color-dodge  }
 
-div#artificial.mood-happy div { background: rgba(200, 200, 200, 1.0) }
-div#artificial.mood-happy     { background: rgba(20,    8,  30, 1.0) }
+div#artificial.mood-happy div { background:       rgba(200, 200, 200, 1.0) }
+div#artificial.mood-happy     { background-color: rgba(20,    8,  30, 1.0) }
 
 div#artificial.mood-happy emoji e:nth-child(2)  { background: var(--bg) }
 div#artificial.mood-happy emoji e:nth-child(3)  { background: var(--bg) }
@@ -109,8 +106,8 @@ div#artificial.mood-mad emoji {
 
 div#artificial.mood-mad   div#orbiter div { mix-blend-mode: color-dodge }
 
-div#artificial.mood-mad   div { background: rgba(200,  120,  20, 1.0) }
-div#artificial.mood-mad       { background: rgba( 20,   10,  10, 1.0) }
+div#artificial.mood-mad   div { background:       rgba(200,  120,  20, 1.0) }
+div#artificial.mood-mad       { background-color: rgba( 20,   10,  10, 1.0) }
 
 div#artificial.mood-mad emoji e:nth-child(1)  { background: var(--bg) }
 div#artificial.mood-mad emoji e:nth-child(2)  { background: var(--bg) }
@@ -147,8 +144,8 @@ div#artificial.mood-sad emoji {
 
 div#artificial.mood-sad   div#orbiter div { mix-blend-mode: screen  }
 
-div#artificial.mood-sad   div { background: rgba( 80,   80, 200, 1.0) }
-div#artificial.mood-sad       { background: rgba( 10,    0,  10, 1.0) }
+div#artificial.mood-sad   div { background:       rgba( 80,   80, 200, 1.0) }
+div#artificial.mood-sad       { background-color: rgba( 10,    0,  10, 1.0) }
 
 div#artificial.mood-sad emoji e:nth-child(2)  { background: var(--bg) }
 div#artificial.mood-sad emoji e:nth-child(3)  { background: var(--bg) }
@@ -179,8 +176,8 @@ div#artificial.mood-neutral emoji { display: none }
 
 div#artificial.mood-neutral   div#orbiter div { mix-blend-mode: color-dodge  }
 
-div#artificial.mood-neutral   div { background: rgba( 100,  180, 240, 1.0) }
-div#artificial.mood-neutral       { background: rgba( 10,    10,  20, 1.0) }
+div#artificial.mood-neutral   div { background:       rgba( 100,  180, 240, 1.0) }
+div#artificial.mood-neutral       { background-color: rgba( 10,    10,  20, 1.0) }
 
 /* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
 /*                  Orbiter                    */
@@ -223,23 +220,6 @@ div#artificial.listening div#orbiter div div {
     animation:
         listening calc( var(--child) * 0.8s - 0.0s)
         ease-in-out calc(var(--child) * -8s) infinite alternate;
-}
-
-/* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
-/*                   Overlay                   */
-/* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
-div.relative {
-    position: relative;
-}
-div#overlay {
-    position: absolute;
-    z-index: 100;
-    top: 0px;
-    width: 100%;
-    height: 100%;
-    background: transparent
-        url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAUCAYAAABMDlehAAAAFUlEQVQImWP48+dvExMDA4M4A80AAFvnA5GCwYReAAAAAElFTkSuQmCC')
-        repeat;
 }
 
 /* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */

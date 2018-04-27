@@ -1,12 +1,17 @@
 /* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
 /*                 Base Styles                 */
 /* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
+html, body, div, emoji, e {
+}
 html, body {
     background: black;
     overflow: hidden;
     padding: 0;
     border: 0;
     margin: 0;
+    transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
 }
 
 div#panel {
@@ -28,6 +33,9 @@ div#artificial {
     background-image:
         url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAUCAYAAABMDlehAAAAGklEQVQImWP4//+/CBMDAwMDhPj79x8DtQEAJV8GEPQi6p0AAAAASUVORK5CYII=');
     background-repeat: repeat;
+    transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
 }
 
 /* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
@@ -92,7 +100,7 @@ div#artificial.mood-happy emoji e:nth-child(80) { background: var(--bg) }
 @keyframes happy {
     0%    { transform: translateY(-20px) scaleY(1.0) }
     50%   { transform: translateY(20px)  scaleY(0.96) }
-    100%  { transform: translateY(60px)   scaleY(1.0) }
+    100%  { transform: translateY(60px)  scaleY(1.0) }
 }
 
 /* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */

@@ -232,7 +232,7 @@ div#artificial.listening div#orbiter div div {
 
 @keyframes talking {
     0%    { transform: scale(0.4) }
-    10%   { transform: scale3d(6.5, 3.5, 3.5) }
+    10%   { transform: scale(6.5, 3.5) }
     100%  { transform: scale(-1.0) }
 }
 

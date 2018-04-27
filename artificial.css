@@ -80,7 +80,7 @@ div#artificial.mood-happy emoji {
 
 div#artificial.mood-happy div#orbiter div { mix-blend-mode: color-dodge  }
 
-div#artificial.mood-happy div { background:       rgba(200, 200, 200, 1.0) }
+div#artificial.mood-happy div { background:       rgba(255, 200, 255, 1.0) }
 div#artificial.mood-happy     { background-color: rgba(20,    8,  30, 1.0) }
 
 div#artificial.mood-happy emoji e:nth-child(2)  { background: var(--bg) }
@@ -99,9 +99,13 @@ div#artificial.mood-happy emoji e:nth-child(79) { background: var(--bg) }
 div#artificial.mood-happy emoji e:nth-child(80) { background: var(--bg) }
 
 @keyframes happy {
-    0%    { transform: translateY(-20px) scaleY(1.0) }
+    0%    { transform: translateY(-20px) scaleY(1.0)  }
+    2%    { transform: translateY(-40px) scaleY(1.0)  }
+    48%   { transform: translateY(40px)  scaleY(0.96) }
     50%   { transform: translateY(20px)  scaleY(0.96) }
-    100%  { transform: translateY(60px)  scaleY(1.0) }
+    52%   { transform: translateY(0px)   scaleY(0.96) }
+    90%   { transform: translateY(60px)  scaleY(1.0)  }
+    100%  { transform: translateY(20px)  scaleY(1.0)  }
 }
 
 /* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
@@ -114,7 +118,7 @@ div#artificial.mood-mad emoji {
 
 div#artificial.mood-mad   div#orbiter div { mix-blend-mode: color-dodge }
 
-div#artificial.mood-mad   div { background:       rgba(200,  120,  20, 1.0) }
+div#artificial.mood-mad   div { background:       rgba(255,  120,  20, 1.0) }
 div#artificial.mood-mad       { background-color: rgba( 20,   10,  10, 1.0) }
 
 div#artificial.mood-mad emoji e:nth-child(1)  { background: var(--bg) }
@@ -138,7 +142,11 @@ div#artificial.mood-mad emoji e:nth-child(81) { background: var(--bg) }
 
 @keyframes mad {
     0%    { transform: translateY(0px) scaleY(1.01) }
+    3%    { transform: translateY(0px) scaleY(1.03) }
+    47%   { transform: translateY(0px) scaleX(0.88) }
     50%   { transform: translateY(0px) scaleX(0.98) }
+    53%   { transform: translateY(0px) scaleX(1.10) }
+    90%   { transform: translateY(0px) scaleY(1.08) }
     100%  { transform: translateY(0px) scaleY(1.02) }
 }
 
@@ -150,9 +158,9 @@ div#artificial.mood-sad emoji {
     animation: sad 0.8s linear -1s infinite alternate;
 }
 
-div#artificial.mood-sad   div#orbiter div { mix-blend-mode: screen  }
+div#artificial.mood-sad   div#orbiter div { mix-blend-mode: color-dodge  }
 
-div#artificial.mood-sad   div { background:       rgba( 80,   80, 200, 1.0) }
+div#artificial.mood-sad   div { background:       rgba( 180,   180, 255, 1.0) }
 div#artificial.mood-sad       { background-color: rgba( 10,    0,  10, 1.0) }
 
 div#artificial.mood-sad emoji e:nth-child(2)  { background: var(--bg) }
@@ -173,8 +181,13 @@ div#artificial.mood-sad emoji e:nth-child(68) { background: var(--bg) }
 div#artificial.mood-sad emoji e:nth-child(81) { background: var(--bg) }
 
 @keyframes sad {
-    0%    { transform: translateX(12px)  scaleX(1.00) }
-    100%  { transform: translateX(-12px) scaleX(1.00) }
+    0%    { transform: translateX(90px)  scaleX(1.00) }
+    2%    { transform: translateX(20px)  scaleX(1.00) }
+    48%  { transform: translateX(-20px) scaleX(1.00) }
+    50%  { transform: translateX(-10px) scaleX(1.00) }
+    52%  { transform: translateX(30px) scaleX(1.00) }
+    98%  { transform: translateX(-30px) scaleX(1.00) }
+    100%  { transform: translateX(-90px) scaleX(1.00) }
 }
 
 /* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
@@ -234,20 +247,21 @@ div#artificial.listening div#orbiter div div {
 /*             Animation Keyframes             */
 /* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
 @keyframes orbit {
-    0%    { transform: rotate(0deg)   translateY(60px)  }
+    0%    { transform: rotate(0deg)   translateY(60px) }
     50%   { transform: rotate(180deg) translateY(90px) }
-    100%  { transform: rotate(360deg) translateY(60px)  }
+    100%  { transform: rotate(360deg) translateY(60px) }
 }
 
 @keyframes talking {
-    0%    { transform: scale(0.4) }
+    0%    { transform: scale(0.4)      }
     10%   { transform: scale(6.5, 3.5) }
-    100%  { transform: scale(0.0) }
+    100%  { transform: scale(0.0)      }
 }
 
 @keyframes listening {
-    0%    { transform: scale(5.4) }
-    100%  { transform: scale(-0.2) }
+    0%    { transform: translateX(-50px) rotate(0deg)   translateY(60px) }
+    50%   { transform: translateX(0px)   rotate(180deg) translateY(90px) }
+    100%  { transform: translateX(50px)  rotate(360deg) translateY(60px) }
 }
 
 /* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */

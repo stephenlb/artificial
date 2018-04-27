@@ -29,12 +29,13 @@ div#artificial {
     justify-content: center;
     align-content: center;
     height: 100%;
-    background-position: 0px 16px;
     background-image:
         url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAUCAYAAABMD\
         lehAAAAGklEQVQImW\P4//+/CBMDAwMDhPj79x8DtQEAJV8GEPQ\
         i6p0AAAAASUVORK5CYII=');
     background-repeat: repeat;
+    background-size: 20px 10px;
+    background-position: 0px 8px;
     transform-style: preserve-3d;
     backface-visibility: hidden;
 }

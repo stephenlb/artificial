@@ -30,9 +30,9 @@ div#artificial {
     align-content: center;
     height: 100%;
     background-image:
-        url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAUCAYAAABMD\
-        lehAAAAGklEQVQImW\P4//+/CBMDAwMDhPj79x8DtQEAJV8GEPQ\
-        i6p0AAAAASUVORK5CYII=');
+        url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAUCAYA\
+        AABMDlehAAAAGklEQVQImWP4//8/LxMDAwMDhPj79x8DtQEAIr8GCaM3FzcAAAA\
+        ASUVORK5CYII=');
     background-repeat: repeat;
     background-size: 20px 20px;
     background-position: 0px 8px;
@@ -240,7 +240,6 @@ div#artificial.talking div#orbiter div {
 }
 
 div#artificial.listening div#orbiter div div {
-    border-radius: 6px;
     animation:
         listening calc( var(--child) * 0.8s - 0.0s)
         ease-in-out calc(var(--child) * -8s) infinite alternate;

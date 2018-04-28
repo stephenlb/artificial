@@ -1,8 +1,6 @@
 /* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
 /*                 Base Styles                 */
 /* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
-html, body, div, emoji, e {
-}
 html, body {
     background: black;
     overflow: hidden;
@@ -15,8 +13,6 @@ html, body {
 
 div#panel {
     display: none;
-    /* TODO */
-    /* TODO */
     /* TODO */
 }
 
@@ -145,12 +141,12 @@ div#artificial.mood-mad emoji e:nth-child(81) { background: var(--bg) }
 
 @keyframes mad {
     0%    { transform: translateY(0px) scaleY(1.01) }
-    3%    { transform: translateY(0px) scaleY(1.03) }
-    47%   { transform: translateY(0px) scaleX(0.88) }
-    50%   { transform: translateY(0px) scaleX(0.98) }
-    53%   { transform: translateY(0px) scaleX(1.10) }
-    90%   { transform: translateY(0px) scaleY(1.08) }
-    100%  { transform: translateY(0px) scaleY(1.02) }
+    3%    { transform: translateY(0px) scaleY(1.01) }
+    47%   { transform: translateY(0px) scaleX(0.98) }
+    50%   { transform: translateY(4px) scaleX(0.98) }
+    53%   { transform: translateY(0px) scaleX(1.03) }
+    90%   { transform: translateY(0px) scaleY(1.05) }
+    100%  { transform: translateY(3px) scaleY(1.01) }
 }
 
 /* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
@@ -184,13 +180,13 @@ div#artificial.mood-sad emoji e:nth-child(68) { background: var(--bg) }
 div#artificial.mood-sad emoji e:nth-child(81) { background: var(--bg) }
 
 @keyframes sad {
-    0%    { transform: translateX(90px)  scaleX(1.00) }
-    2%    { transform: translateX(20px)  scaleX(1.00) }
+    0%   { transform: translateX(90px)  scaleY(2.00) }
+    2%   { transform: translateX(20px)  scaleX(1.00) }
     48%  { transform: translateX(-20px) scaleX(1.00) }
-    50%  { transform: translateX(-10px) scaleX(1.00) }
-    52%  { transform: translateX(30px) scaleX(1.00) }
+    50%  { transform: translateX(-10px) scaleX(2.30) }
+    52%  { transform: translateX(30px)  scaleX(1.00) }
     98%  { transform: translateX(-30px) scaleX(1.00) }
-    100%  { transform: translateX(-90px) scaleX(1.00) }
+    100% { transform: translateX(-90px) scaleX(-2.00) }
 }
 
 /* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */

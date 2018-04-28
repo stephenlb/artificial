@@ -38,7 +38,7 @@ div#artificial {
     background-position: 0px 8px;
     transform-style: preserve-3d;
     backface-visibility: hidden;
-    animation: scanlines 0.6s linear -1s infinite;
+    animation: scanlines 0.3s linear -1s infinite;
     transform: rotateX(0.00000001deg);
 }
 

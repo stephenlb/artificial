@@ -157,10 +157,10 @@ div#artificial.mood-sad emoji {
     animation: sad 0.8s linear -1s infinite alternate;
 }
 
-div#artificial.mood-sad   div#orbiter div { mix-blend-mode: color-dodge  }
+div#artificial.mood-sad div#orbiter div { mix-blend-mode: color-dodge  }
 
-div#artificial.mood-sad   div { background:       rgba( 180,   180, 220, 1.0) }
-div#artificial.mood-sad       { background-color: rgba( 10,    0,  10, 1.0) }
+div#artificial.mood-sad div { background:       rgba( 180,   180, 220, 1.0) }
+div#artificial.mood-sad     { background-color: rgba( 10,    0,  10, 1.0) }
 
 div#artificial.mood-sad emoji e:nth-child(2)  { background: var(--bg) }
 div#artificial.mood-sad emoji e:nth-child(3)  { background: var(--bg) }
@@ -194,10 +194,10 @@ div#artificial.mood-sad emoji e:nth-child(81) { background: var(--bg) }
 /* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
 div#artificial.mood-neutral emoji { display: none }
 
-div#artificial.mood-neutral   div#orbiter div { mix-blend-mode: color-dodge  }
+div#artificial.mood-neutral div#orbiter div { mix-blend-mode: color-dodge  }
 
-div#artificial.mood-neutral   div { background:       rgba( 100,  180, 230, 1.0) }
-div#artificial.mood-neutral       { background-color: rgba( 10,    10,  20, 1.0) }
+div#artificial.mood-neutral div { background:       rgba( 100,  180, 230, 1.0) }
+div#artificial.mood-neutral     { background-color: rgba( 10,    10,  20, 1.0) }
 
 /* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
 /*                  Orbiter                    */
@@ -286,5 +286,3 @@ div#artificial div:nth-child(13) { --child: 13 }
 div#artificial div:nth-child(14) { --child: 14 }
 div#artificial div:nth-child(15) { --child: 15 }
 div#artificial div:nth-child(16) { --child: 16 }
-
-

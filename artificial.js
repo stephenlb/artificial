@@ -4,27 +4,29 @@
     let   mood    = orbiter.className;
     let   ting    = ['', 'listening', 'talking'];
     let   pose    = 0;
-    setInterval( ()=>{
-        orbiter.className = mood + ting[pose++%3];
-    }, 2000 );
+    setInterval( ()=> orbiter.className = mood + ' '+ ting[pose++%3], 2000 );
 })();
 
 (()=>{
     'use strict';
-    let stream = null;
-    let source = null;
+
+    let context = new AudioContext();
+    let stream  = null;
+    let source  = null;
 
     requestMicrophone();
 
     function requestMicrophone() {
-        let constraints = { audio : { sampleRate:11000, channelCount:1 } };
-        navigator.mediaDevices.getUserMedia(constraints)
+        navigator.mediaDevices.getUserMedia({ audio : true })
         .then( source => setSource(source) )
         .catch( error => console.error(error) );
     }
 
-    function setSource(src) {
-        stream = source;
-        //source = audioCtx.createMediaStreamSource(stream);
+    function setSource(srcstrm) {
+        stream = srcstrm;
+        source = context.createMediaStreamSource(stream);
+
+        console.log(stream);
+        console.log(source);
     }
 })();

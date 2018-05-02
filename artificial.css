@@ -237,7 +237,7 @@ div#artificial.talking div#orbiter div {
 
 div#artificial.listening div#orbiter div div {
     animation:
-        listening calc( var(--child) * 0.8s - 0.0s)
+        listening calc( var(--child) * 0.3s - 0.0s)
         ease-in-out calc(var(--child) * -8s) infinite alternate;
 }
 
@@ -262,9 +262,9 @@ div#artificial.listening div#orbiter div div {
 }
 
 @keyframes listening {
-    0%    { transform: translateX(-50px) rotate(0deg)   translateY(60px) }
-    50%   { transform: translateX(0px)   rotate(180deg) translateY(90px) }
-    100%  { transform: translateX(50px)  rotate(360deg) translateY(60px) }
+    0%    { transform: translateX(-99px) rotate(0deg)   translateY(29px) }
+    50%   { transform: translateX(0px)   rotate(180deg) translateY(99px) }
+    100%  { transform: translateX(99px)  rotate(360deg) translateY(29px) }
 }
 
 /* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */

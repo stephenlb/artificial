@@ -13,17 +13,49 @@
 
 var recognition = new webkitSpeechRecognition();
 
-recognition.continuous     = true;
+//recognition.continuous     = true;
 recognition.lang           = navigator.language || 'en-US';
-recognition.interimResults = true;
+//recognition.interimResults = true;
+recognition.interimResults = false;
 
 recognition.onstart        = function() { console.log('Started.') }
 recognition.onend          = function() { console.log('End.') }
-recognition.onresult       = function(event) { console.log('Result.',event) }
+recognition.onresult       = function(event) { result(event) }
 recognition.onerror        = function(event) { console.log('Error.',event) }
 
-  recognition.start();
-0&&document.querySelector('html').onclick = function() {
+
+const voicesPromise = new Promise( resolve => {
+    speechSynthesis.onvoiceschanged = _=> {
+	resolve(speechSynthesis.getVoices());
+    };
+} );
+function speak( text, voice=0 ) { voicesPromise.then(_=>{
+    const speech = new SpeechSynthesisUtterance(text);
+    speech.voice = speechSynthesis.getVoices()[voice];
+    speechSynthesis.speak(speech);
+}) }
+
+speak('Hi.');
+
+function result(event) {
+    console.log(event,event.results.length);
+    //for (var i=0;i<event.results.length;i++ ) {
+        speak(event.results[event.results.length-1][0].transcript);
+        console.log(event.results[event.results.length-1][0].transcript);
+    //}
+    /*
+    event.results.forEach( result => {
+        speak(result[0].transcript);
+    } );
+    */
+    /*event.results.filter( result => {forEach( result => {
+        speak(
+        if (!result.isFinal) return;
+    } );*/
+}
+
+recognition.start();
+document.querySelector('html').onclick = function() {
   recognition.start();
   console.log('Ready to receive a color command.');
 }

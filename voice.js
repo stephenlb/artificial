@@ -38,12 +38,14 @@
 
     voice.speak = (text) => {
         const speech = new SpeechSynthesisUtterance(text);
+        //let then;
         speechSynthesis.speak(speech);
+        //return { then : cb => then = cb };
     };
 
     voice.listen = () => {
         if (speechSynthesis.speaking)
-            return setTimeout( voice.listen, 300 );
+            return setTimeout( voice.listen, 100 );
 
         voice.onInterim   = voice.onInterim || (()=>{});
         voice.onFinal     = voice.onFinal   || (()=>{});

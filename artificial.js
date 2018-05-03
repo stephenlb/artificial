@@ -4,7 +4,10 @@
     let   mood    = orbiter.className;
     let   ting    = ['', 'listening', 'talking'];
     let   pose    = 0;
-    setInterval( ()=> orbiter.className = mood + ' '+ ting[pose++%3], 2000 );
+    //setInterval( ()=> orbiter.className = mood + ' '+ ting[pose++%3], 2000 );
+    const emotion = window.emotion = ( mood='mood-happy', mode='' ) => {
+        orbiter.className = 'mood-' + mood + ' '+ mode;
+    };
 })();
 
 (()=>{
@@ -51,8 +54,10 @@
     voice.onStart = () => {
         console.log('Started listening.');
         // TODO update UI
+        emotion( 'happy', 'listening' );
     };
     voice.onEnd = () => { 
+        emotion( 'happy', '' );
         console.log('End listening.');
         if (!voice.finalResult)
             setTimeout( voice.listen, 300 );
@@ -67,7 +72,8 @@
     };
 
     // TODO uncomment
-    voice.speak('Hi.');
+    voice.speak('Hi.')//.then( () => emotion( 'happy', 'listening' ) );
+    emotion( 'happy', 'talking' );
     setTimeout( voice.listen, 1000 );
 
 })();

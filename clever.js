@@ -27,7 +27,7 @@ export default (request, response) => {
             return response.send(reply);
 
         } ).catch( error => {
-            return response.send(error);
+            return response.send({ "response" : "Trouble hearing you." });
         });
     } );
 };

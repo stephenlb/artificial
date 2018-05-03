@@ -36,25 +36,16 @@ function speak( text, voice=0 ) { voicesPromise.then(_=>{
 }) }
 
 speak('Hi.');
-
+const out = document.querySelector('.out');
 function result(event) {
     console.log(event,event.results.length);
-    //for (var i=0;i<event.results.length;i++ ) {
-        speak(event.results[event.results.length-1][0].transcript);
-        console.log(event.results[event.results.length-1][0].transcript);
-    //}
-    /*
-    event.results.forEach( result => {
-        speak(result[0].transcript);
-    } );
-    */
-    /*event.results.filter( result => {forEach( result => {
-        speak(
-        if (!result.isFinal) return;
-    } );*/
+    const transcript = event.results[event.results.length-1][0].transcript;
+    speak(transcript);
+    console.log(transcript);
+    out.innerHTML += "<div>"+transcript+"</div>"
 }
 
-recognition.start();
+//recognition.start();
 document.querySelector('html').onclick = function() {
   recognition.start();
   console.log('Ready to receive a color command.');

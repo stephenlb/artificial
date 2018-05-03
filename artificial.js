@@ -21,7 +21,7 @@
     function chatbot_reply(result) {
         console.log('Success', result);
         voice.speak(result.response);
-        voice.listen();
+        setTimeout( voice.listen, 300 );
     }
 
     function chatbot_error(error) {
@@ -42,13 +42,20 @@
         chatbot({ url : chatbot_url + transcript });
     };
 
+    voice.noMatch = () => {
+        console.log('No match.');
+        setTimeout( voice.listen, 100 );
+        // TODO update UI
+    };
+
     voice.onStart = () => {
         console.log('Started listening.');
         // TODO update UI
     };
     voice.onEnd = () => { 
         console.log('End listening.');
-        setTimeout( voice.listen, 1000 );
+        if (!voice.finalResult)
+            setTimeout( voice.listen, 300 );
         // TODO only listen when speaking is done.
         // TODO only listen when speaking is done.
         // TODO only listen when speaking is done.

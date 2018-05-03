@@ -45,15 +45,18 @@
         if (speechSynthesis.speaking)
             return setTimeout( voice.listen, 300 );
 
-        voice.onInterim = voice.onInterim || (()=>{});
-        voice.onFinal   = voice.onFinal   || (()=>{});
-        voice.onStart   = voice.onStart   || (()=>{});
-        voice.onEnd     = voice.onEnd     || (()=>{});
-        voice.onError   = voice.onError   || (()=>{});
+        voice.onInterim   = voice.onInterim || (()=>{});
+        voice.onFinal     = voice.onFinal   || (()=>{});
+        voice.onStart     = voice.onStart   || (()=>{});
+        voice.onEnd       = voice.onEnd     || (()=>{});
+        voice.onError     = voice.onError   || (()=>{});
+        voice.noMatch     = voice.noMatch   || (()=>{});
+        voice.finalResult = '';
 
         recognition.onstart  = voice.onStart;
         recognition.onend    = voice.onEnd;
         recognition.onerror  = voice.onError;
+        recognition.nomatch  = voice.noMatch;
         recognition.onresult = results;
 
         try { recognition.start() }
@@ -69,8 +72,10 @@
             interim.push(results[i][0].transcript);
 
             // Final Result
-            if (results[i].isFinal)
+            if (results[i].isFinal) {
+                voice.finalResult = results[i][0].transcript;
                 voice.onFinal( results[i][0].transcript, event );
+            }
         }
 
         voice.onInterim( interim.join(''), event );

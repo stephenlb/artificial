@@ -237,17 +237,17 @@ div#artificial.talking div#orbiter div {
 
 div#artificial.listening div#orbiter div div {
     animation:
-        listening calc( var(--child) * 0.3s - 0.0s)
-        ease-in-out calc(var(--child) * -8s) infinite alternate;
+        listening calc( var(--child) * 0.5s - 0.0s)
+        ease-in-out calc(var(--child) * -1s) infinite;
 }
 
 /* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
 /*             Animation Keyframes             */
 /* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
 @keyframes orbit {
-    0%    { transform: rotate(0deg)   translateY(60px) }
-    50%   { transform: rotate(180deg) translateY(90px) }
-    100%  { transform: rotate(360deg) translateY(60px) }
+    0%    { transform: rotate(0deg)   translateY(160px) }
+    50%   { transform: rotate(180deg) translateY(190px) }
+    100%  { transform: rotate(360deg) translateY(160px) }
 }
 
 @keyframes scanlines {
@@ -262,9 +262,9 @@ div#artificial.listening div#orbiter div div {
 }
 
 @keyframes listening {
-    0%    { transform: translateX(-99px) rotate(0deg)   translateY(29px) }
-    50%   { transform: translateX(0px)   rotate(180deg) translateY(99px) }
-    100%  { transform: translateX(99px)  rotate(360deg) translateY(29px) }
+    0%    { transform: translateX(-199px) rotate(0deg)   scale(3.1) translateY(129px) }
+    50%   { transform: translateX(0px)    rotate(180deg) scale(1.9) translateZ(199px) }
+    100%  { transform: translateZ(199px)  rotate(360deg) scale(2.1) translateY(129px) }
 }
 
 /* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */

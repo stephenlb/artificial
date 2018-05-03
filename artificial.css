@@ -262,9 +262,9 @@ div#artificial.listening div#orbiter div div {
 }
 
 @keyframes listening {
-    0%    { transform: translateX(-199px) rotate(0deg)   scale(3.1) translateY(129px) }
-    50%   { transform: translateX(0px)    rotate(180deg) scale(1.9) translateZ(199px) }
-    100%  { transform: translateZ(199px)  rotate(360deg) scale(2.1) translateY(129px) }
+    0%    { transform: translateX(-9px) rotate(0deg)   scale(3.1) translateY(9px) }
+    50%   { transform: translateX(0px)  rotate(180deg) scale(1.9) translateZ(9px) }
+    100%  { transform: translateZ(9px)  rotate(360deg) scale(2.1) translateY(1px) }
 }
 
 /* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */

@@ -28,6 +28,7 @@
 
     const voice       = window.voice = (text) => speack(text);
     const recognition = new webkitSpeechRecognition();
+    const interim     = [];
 
     //recognition.continuous     = true;
     recognition.lang           = navigator.language || 'en-US';
@@ -41,6 +42,9 @@
     };
 
     voice.listen = () => {
+        if (speechSynthesis.speaking)
+            return setTimeout( voice.listen, 300 );
+
         voice.onInterim = voice.onInterim || (()=>{});
         voice.onFinal   = voice.onFinal   || (()=>{});
         voice.onStart   = voice.onStart   || (()=>{});
@@ -52,19 +56,25 @@
         recognition.onerror  = voice.onError;
         recognition.onresult = results;
 
-        recognition.start();
+        try { recognition.start() }
+        catch(e) {}
     };
 
     function results(event) {
         const results = event.results;
 
-        // Final Result
-        if (results[results.length-1].isFinal)
-            voice.onFinal( results[results.length-1][0].transcript, event );
+        // Results
+        for (let i=0;i<results.length;i++) {
+            // Interim Result
+            interim.push(results[i][0].transcript);
 
-        // Interim Results
-        for (let i=0;i<results.length;i++)
-            voice.onInterim( results[i][0].transcript, event );
+            // Final Result
+            if (results[i].isFinal)
+                voice.onFinal( results[i][0].transcript, event );
+        }
+
+        voice.onInterim( interim.join(''), event );
+        interim.length = 0;
     }
 
 })();

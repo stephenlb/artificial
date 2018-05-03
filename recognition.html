@@ -23,17 +23,10 @@ recognition.onend          = function() { console.log('End.') }
 recognition.onresult       = function(event) { result(event) }
 recognition.onerror        = function(event) { console.log('Error.',event) }
 
-
-const voicesPromise = new Promise( resolve => {
-    speechSynthesis.onvoiceschanged = _=> {
-	resolve(speechSynthesis.getVoices());
-    };
-} );
-function speak( text, voice=0 ) { voicesPromise.then(_=>{
+function speak(text) {
     const speech = new SpeechSynthesisUtterance(text);
-    speech.voice = speechSynthesis.getVoices()[voice];
     speechSynthesis.speak(speech);
-}) }
+}
 
 speak('Hi.');
 const out = document.querySelector('.out');

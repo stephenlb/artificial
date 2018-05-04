@@ -12,6 +12,12 @@
 
 (()=>{
     'use strict';
+    const output   = document.querySelector('subtitle');
+    const subtitle = window.subtitle = (text) => output.innerHTML = text;
+})();
+
+(()=>{
+    'use strict';
     const subkey      = 'sub-c-af8fe1f6-4f09-11e8-9b53-6e008aa3b186';
     const chatbot_url = 'https://pubsub.pubnub.com/v1/blocks/sub-key/'
                         + subkey + '/chatbot?message=';
@@ -23,6 +29,7 @@
 
     function chatbot_reply(result) {
         console.log('Success', result);
+        subtitle(result.response);
         voice.speak(result.response);
         emotion( 'happy', 'talking' );
         setTimeout( voice.listen, 300 );
@@ -35,12 +42,12 @@
 
     voice.onInterim = (transcript) => {
         console.log( 'Interim:', transcript );
-        // TODO display text on screen
+        subtitle(transcript);
     };
 
     voice.onFinal = (transcript) => {
         console.log( 'Final:', transcript );
-        // TODO send to Functions for bot response
+        subtitle(transcript);
         // TODO send to Functions for sentament
         // TODO get result from subscribes.....
         chatbot({ url : chatbot_url + transcript });
@@ -48,32 +55,27 @@
 
     voice.noMatch = () => {
         console.log('No match.');
+        subtitle('...');
         setTimeout( voice.listen, 100 );
-        // TODO update UI
     };
 
     voice.onStart = () => {
         console.log('Started listening.');
-        // TODO update UI
         emotion( 'happy', 'listening' );
     };
-    voice.onEnd = () => { 
+    voice.onEnd = () => {
         emotion( 'happy', '' );
         console.log('End listening.');
         if (!voice.finalResult)
             setTimeout( voice.listen, 300 );
-        // TODO only listen when speaking is done.
-        // TODO only listen when speaking is done.
-        // TODO only listen when speaking is done.
-        // TODO update UI
     };
     voice.onError = () => { 
         console.log('Error listening.');
-        //setTimeout( voice.listen, 300 );
     };
 
-    // TODO uncomment
-    voice.speak('Hi.')//.then( () => emotion( 'happy', 'listening' ) );
+    // Greating
+    voice.speak('Hi.')
+    subtitle('Hi.');
     emotion( 'happy', 'talking' );
     setTimeout( voice.listen, 1000 );
 

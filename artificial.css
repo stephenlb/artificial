@@ -11,11 +11,6 @@ html, body {
     backface-visibility: hidden;
 }
 
-div#panel {
-    display: none;
-    /* TODO */
-}
-
 div#artificial {
     position: relative;
     display: flex;
@@ -36,6 +31,29 @@ div#artificial {
     backface-visibility: hidden;
     animation: scanlines 0.3s linear -1s infinite;
     transform: rotateX(0.00000001deg);
+}
+
+/* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
+/*                   SUBTITLES                 */
+/* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
+subtitle {
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    margin: auto;
+    width: 90%;
+    height: 100vh;
+    background: transparent;
+    font-size: calc( 3vh + 3vw );
+    color: #ffe;
+    text-shadow: 3px 1px 4px #222;
+    font-family: "San Francisco", "Helvetica Neue";
+    font-weight: 200;
 }
 
 /* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
@@ -74,7 +92,7 @@ div#artificial.talking emoji {
 /* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
 div#artificial.mood-happy emoji {
     --bg: rgba( 255, 255, 255, 0.7 );
-    animation: happy 0.4s ease-in-out -1s infinite alternate;
+    animation: happy 1.4s ease-in-out -1s infinite alternate;
 }
 
 div#artificial.mood-happy div#orbiter div { mix-blend-mode: color-dodge  }
@@ -219,7 +237,7 @@ div#orbiter div {
     transform-style: preserve-3d;
     border-radius: 600px;
     animation:
-        orbit calc( var(--child) * 0.9s + 1.6s)
+        orbit calc( var(--child) * 0.5s + 0.6s)
         linear calc(var(--child) * -8s) infinite;
 }
 
@@ -235,9 +253,10 @@ div#artificial.talking div#orbiter div {
         linear calc(var(--child) * -8s) infinite;
 }
 
+div#artificial.listening div#orbiter div,
 div#artificial.listening div#orbiter div div {
     animation:
-        listening calc( var(--child) * 0.5s - 0.0s)
+        listening calc( var(--child) * 0.5s + 10.0s)
         ease-in-out calc(var(--child) * -1s) infinite;
 }
 
@@ -245,9 +264,9 @@ div#artificial.listening div#orbiter div div {
 /*             Animation Keyframes             */
 /* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
 @keyframes orbit {
-    0%    { transform: rotate(0deg)   translateY(160px) }
-    50%   { transform: rotate(180deg) translateY(190px) }
-    100%  { transform: rotate(360deg) translateY(160px) }
+    0%    { transform: rotate(0deg)   translateY(260px) }
+    50%   { transform: rotate(180deg) translateY(290px) }
+    100%  { transform: rotate(360deg) translateY(260px) }
 }
 
 @keyframes scanlines {
@@ -262,9 +281,9 @@ div#artificial.listening div#orbiter div div {
 }
 
 @keyframes listening {
-    0%    { transform: rotate(0deg)   scale(2.9) }
-    50%   { transform: rotate(180deg) scale(2.9) }
-    100%  { transform: rotate(360deg) scale(2.9) }
+    0%    { transform: rotate(0deg)   scale(1.9) }
+    50%   { transform: rotate(180deg) scale(1.0) }
+    100%  { transform: rotate(360deg) scale(1.4) }
 }
 
 /* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */

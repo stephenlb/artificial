@@ -12,6 +12,7 @@ export default (request, response) => {
         return xhr.fetch( uri + [
             "key="   + key
         ,   "input=" + message
+        // TODO RESTORE THIS CUAZ IT HELPS maybe reset every 20?
         //,   "cs="    + session
         ,   "cb_settings_tweak1=100"
         ,   "cb_settings_tweak2=100"
@@ -20,8 +21,8 @@ export default (request, response) => {
             let bot = null;
             try      { bot = JSON.parse(result.body)                }
             catch(e) { 
-                bot = { output: "Bot Error.", cs : session };
                 session = "";
+                bot = { output: "Bot Error.", cs : session };
             }
             const reply = { "response" : bot.output || '' };
             session = bot.cs;

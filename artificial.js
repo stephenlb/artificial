@@ -9,7 +9,9 @@
 (()=>{
     'use strict';
     const output   = document.querySelector('subtitle');
-    const subtitle = window.subtitle = (text) => output.innerHTML = text;
+    const subtitle = window.subtitle = (text) => {
+        if (!speechSynthesis.speaking) output.innerHTML = text;
+    };
 })();
 
 (()=>{
@@ -49,7 +51,10 @@
         // INJECT HERE...
         // INJECT HERE...
         // INJECT HERE...
-        chatbot({ url : chatbot_url + transcript });
+        let message = story(transcript);
+        console.log( 'STORY MESSAGE', message );
+        if (message) chatbot_reply({ response : message });
+        else         chatbot({ url : chatbot_url + transcript });
     };
 
     voice.noMatch = () => {
@@ -76,8 +81,8 @@
     awake.on();
 
     // Greating
-    voice.speak('Hi.')
     subtitle('Hi.');
+    voice.speak('Hi.')
     emotion( 'happy', 'talking' );
     setTimeout( voice.listen, 1000 );
 

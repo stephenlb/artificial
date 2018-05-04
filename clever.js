@@ -6,14 +6,14 @@ export default (request, response) => {
     const xhr    = require('xhr');
     const vault  = require('vault');
 
-    let message = request.params.message || '';
+    let message = request.params.message || "";
 
     return vault.get("cleverbot-key").then( key => {
+        if (Math.random() > 0.95) session = "";
         return xhr.fetch( uri + [
             "key="   + key
         ,   "input=" + message
-        // TODO RESTORE THIS CUAZ IT HELPS maybe reset every 20?
-        //,   "cs="    + session
+        ,   "cs="    + session
         ,   "cb_settings_tweak1=100"
         ,   "cb_settings_tweak2=100"
         ,   "ts=" + (+new Date())

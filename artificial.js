@@ -1,10 +1,6 @@
 (()=>{
     'use strict';
     const orbiter = document.getElementById('artificial');
-    let   mood    = orbiter.className;
-    let   ting    = ['', 'listening', 'talking'];
-    let   pose    = 0;
-    //setInterval( ()=> orbiter.className = mood + ' '+ ting[pose++%3], 2000 );
     const emotion = window.emotion = ( mood='mood-happy', mode='' ) => {
         orbiter.className = 'mood-' + mood + ' '+ mode;
     };
@@ -72,6 +68,9 @@
     voice.onError = () => { 
         console.log('Error listening.');
     };
+
+    // No Sleeping
+    awake.on();
 
     // Greating
     voice.speak('Hi.')

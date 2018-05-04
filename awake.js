@@ -12,6 +12,8 @@
 	noSleep.currentTime = Math.random();
     } );
 
+    document.querySelector('body').appendChild(noSleep);
+
     window.awake = {
         on  : () => noSleep.play()
     ,   off : () => noSleep.pause()

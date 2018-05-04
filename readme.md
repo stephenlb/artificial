@@ -4,6 +4,7 @@ Talking internet.
 
  - TODO - Favicon
  - TODO - mobile launch pic
- - TODO - emotion?
+ - TODO - emotion?... maayyybe
  - TODO - receive subscribe that are not your own (send uuid?).
- - TODO - 
+ - TODO - remove AWAKE if it doesn't work on mobile.
+ - TODO - remove AWAKE if it doesn't work on mobile.

@@ -12,7 +12,7 @@ export default (request, response) => {
         return xhr.fetch( uri + [
             "key="   + key
         ,   "input=" + message
-        ,   "cs="    + session
+        //,   "cs="    + session
         ,   "cb_settings_tweak1=100"
         ,   "cb_settings_tweak2=100"
         ,   "ts=" + (+new Date())

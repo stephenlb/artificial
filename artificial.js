@@ -24,6 +24,7 @@
     function chatbot_reply(result) {
         console.log('Success', result);
         voice.speak(result.response);
+        emotion( 'happy', 'talking' );
         setTimeout( voice.listen, 300 );
     }
 

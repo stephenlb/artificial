@@ -19,15 +19,17 @@ export default (request, response) => {
         ].join('&') ).then( result => {
 
             const bot   = JSON.parse(result.body);
-            const reply = { "response" : bot.output };
+            const reply = { "response" : bot.output || '' };
 
             session = bot.cs;
 
-            pubnub.publish({ channel : "chatbot" , message : reply });
+            pubnub.publish({ channel : "chatbot" , message : reply || '' });
             return response.send(reply);
 
         } ).catch( error => {
-            return response.send({ "response" : "Trouble hearing you." });
+            return response.send({ "response" : "Bot Error." });
         });
-    } );
+    } ).catch( error => {
+        return response.send({ "response" : "Vault Error." });
+    });
 };

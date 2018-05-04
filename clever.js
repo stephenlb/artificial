@@ -17,19 +17,13 @@ export default (request, response) => {
         ,   "cb_settings_tweak2=100"
         ,   "ts=" + (+new Date())
         ].join('&') ).then( result => {
-
-            const bot   = JSON.parse(result.body);
+            let bot = null;
+            try      { bot = JSON.parse(result.body)                }
+            catch(e) { bot = { output: "Bot Error.", cs : session } }
             const reply = { "response" : bot.output || '' };
-
             session = bot.cs;
-
             pubnub.publish({ channel : "chatbot" , message : reply || '' });
             return response.send(reply);
-
-        } ).catch( error => {
-            return response.send({ "response" : "Bot Error." });
-        });
-    } ).catch( error => {
-        return response.send({ "response" : "Vault Error." });
-    });
+        } );
+    } );
 };

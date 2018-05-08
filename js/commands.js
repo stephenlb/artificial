@@ -37,8 +37,6 @@
             subtitle('the beat');
             voice.speak('The beat I can dance.');
             voice.speak('da. da. da.');voice.speak('da. da. da.');
-            voice.speak('dabbbb!');voice.speak('da. da. daa!');
-            voice.speak('da. da. da!');
             setTimeout( () => emotion( 'dance dance-1', 'talking' ),  800 );
             setTimeout( () => emotion( 'dance dance-2', 'talking' ), 2000 );
             setTimeout( () => emotion( 'dance dance-1', 'talking' ), 2700 );

@@ -3,7 +3,7 @@
     const orbiter = document.getElementById('artificial');
     const emotion = window.emotion = ( mood='happy', mode='' ) => {
         let md = emotion.mood = mood || emotion.mood || 'happy';
-        let de = emotion.mode = mode || emotion.mode || 'listening';
+        let de = emotion.mode = mode || emotion.mode || '';
         orbiter.className = 'mood-' + md + ' '+ de;
     };
 })();
@@ -82,7 +82,7 @@
     // Greating
     subtitle('Hi.');
     voice.speak('Hi.')
-    emotion( '', 'talking' );
+    emotion( 'happy', 'talking' );
     setTimeout( voice.listen, 1000 );
 
 })();

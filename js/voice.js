@@ -43,6 +43,7 @@
         //return { then : cb => then = cb };
     };
 
+    voice.stop = () => recognition.stop();
     voice.listen = () => {
         if (speechSynthesis.speaking)
             return setTimeout( voice.listen, 100 );
@@ -64,6 +65,7 @@
         try { recognition.start() }
         catch(e) {}
     };
+
 
     function results(event) {
         const results = event.results;

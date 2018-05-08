@@ -6,11 +6,9 @@
 
     window.story = (ask) => {
         // Custom Responses to Questions
-        for ( let phrase in events ) {
-            console.log(phrase);
+        for ( let phrase in events )
             if (ask.toLowerCase().indexOf(phrase.toLowerCase()) > -1)
                 return (events[phrase]||(()=>{}))();
-            }
 
         // Force Story Events
         return (events[''+count++]||(()=>{}))();

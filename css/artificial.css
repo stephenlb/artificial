@@ -88,6 +88,41 @@ div#artificial.talking emoji {
 }
 
 /* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
+/*               Dance - Emoji                 */
+/* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
+div#artificial.mood-dance emoji e:nth-child(1) {
+    animation: happy 1.4s ease-in-out s infinite alternate;
+}
+div#artificial.mood-dance emoji e:nth-child(1) {
+    background-image: url(../images/dance.gif);
+    background-size: cover;
+    width: 660px;
+    height: 660px;
+    margin: 0px;
+    animation: dance 2.0s ease-out -1s infinite alternate;
+}
+div#artificial.dance-1 emoji e:nth-child(1) {
+    background-image: url(../images/dance-1.gif);
+}
+div#artificial.dance-2 emoji e:nth-child(1) {
+    background-image: url(../images/dance-2.gif);
+}
+div#artificial.dance-3 emoji e:nth-child(1) {
+    background-image: url(../images/dance-3.gif);
+}
+
+div#artificial.mood-dance div#orbiter div { mix-blend-mode: color-dodge  }
+div#artificial.mood-dance div { background:       rgba(220, 200, 220, 1.0) }
+div#artificial.mood-dance     { background-color: rgba(90,   10,  90, 1.0) }
+
+@keyframes dance {
+      0%  { transform: translateY(-200px) rotate(0deg) scale(2.6); filter: hue-rotate(360deg);   }
+     50%  { transform: translateY(200px)  rotate(20deg) scale(2.2);  }
+     51%  { transform: translateY(200px)  rotate(-20deg) scale(2.3); filter: hue-rotate(360deg);  }
+    100%  { transform: translateY(200px)  rotate(40deg) scale(3.5);  }
+}
+
+/* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
 /*                 Happy Emoji                 */
 /* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
 div#artificial.mood-happy emoji {

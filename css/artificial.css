@@ -113,13 +113,13 @@ div#artificial.dance-3 emoji e:nth-child(1) {
 
 div#artificial.mood-dance div#orbiter div { mix-blend-mode: color-dodge  }
 div#artificial.mood-dance div { background:       rgba(220, 200, 220, 1.0) }
-div#artificial.mood-dance     { background-color: rgba(90,   10,  90, 1.0) }
+div#artificial.mood-dance     { background-color: rgba(140,   0, 140, 1.0) }
 
 @keyframes dance {
-      0%  { transform: translateY(-200px) rotate(0deg) scale(2.6); filter: hue-rotate(360deg);   }
-     50%  { transform: translateY(200px)  rotate(20deg) scale(2.2);  }
-     51%  { transform: translateY(200px)  rotate(-20deg) scale(2.3); filter: hue-rotate(360deg);  }
-    100%  { transform: translateY(200px)  rotate(40deg) scale(3.5);  }
+      0%  { transform: translateY(-200px) rotate(-10deg) scale(2.6); filter: hue-rotate(360deg); }
+     50%  { transform: translateY( 200px) rotate(30deg) scale(2.2);                              }
+     51%  { transform: translateY( 200px) rotate(-30deg) scale(2.3); filter: hue-rotate(360deg); }
+    100%  { transform: translateY(   0px) rotate(50deg) scale(3.5);                              }
 }
 
 /* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */

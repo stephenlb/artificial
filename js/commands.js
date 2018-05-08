@@ -35,8 +35,10 @@
         setTimeout( () => {
             voice.stop();
             subtitle('the beat');
-            voice.speak('The beat I can dance.');
-            voice.speak('da. da. da.');voice.speak('da. da. da.');
+            voice.speak('The beat I can dance to.');
+            voice.speak('da. da. da.');
+            voice.speak('da. da. da.');
+            setTimeout( () => sounds.play( 'sounds/dance', 9000 ), 800 );
             setTimeout( () => emotion( 'dance dance-1', 'talking' ),  800 );
             setTimeout( () => emotion( 'dance dance-2', 'talking' ), 2000 );
             setTimeout( () => emotion( 'dance dance-1', 'talking' ), 2700 );
@@ -49,7 +51,7 @@
             setTimeout( () => emotion( 'dance dance-2', 'talking' ), 8000 );
             setTimeout( () => emotion( 'happy', 'listening' ), 9000 );
             setTimeout( () => subtitle(' '), 9000 );
-            setTimeout( () => sounds.play( 'sounds/dance', 9000 ), 800 );
+            setTimeout( () => voice.listen(), 9500 );
         }, 400 );
 
         return ' ';

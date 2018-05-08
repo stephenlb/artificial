@@ -32,12 +32,12 @@
     ,   fail    : chatbot_error
     });
 
-    function chatbot_reply(result) {
+    function chatbot_reply( result, listen=true ) {
         console.log('Success', result);
         subtitle(result.response);
         voice.speak(result.response);
         emotion( '', 'talking' );
-        setTimeout( voice.listen, 300 );
+        if (listen) setTimeout( voice.listen, 300 );
     }
 
     function chatbot_error(error) {
@@ -54,7 +54,7 @@
         console.log( 'Final:', transcript );
         subtitle(transcript);
         let message = story(transcript);
-        if (message) chatbot_reply({ response : message });
+        if (message) chatbot_reply( { response : message }, false );
         else         chatbot({ url : chatbot_url + transcript });
     };
 

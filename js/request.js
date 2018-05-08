@@ -7,7 +7,7 @@ var requester = window.requester = function(setup) {
 
     var xhr      = new XMLHttpRequest()
     ,   finished = false
-    ,   timeout  = setup.timeout || 10000
+    ,   timeout  = setup.timeout || 15000
     ,   success  = setup.success || function(){}
     ,   fail     = setup.fail    || function(){};
 

@@ -1,6 +1,8 @@
 let session = "";
 let uri     = "http://www.cleverbot.com/getreply?";
 
+// TODO SEssion PER USER
+
 export default (request, response) => {
     const pubnub = require('pubnub');
     const xhr    = require('xhr');

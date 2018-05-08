@@ -19,12 +19,13 @@
                             'I am a robot built inside a PubNub.com Function.' );
     story.event( '100', ()=>'Wait a minute... okay I\'m ready. I will be a happy robot.' );
 
-    story.event( 'you exist', ()=>'You needed a demo for PubNub Functions. '+
+    story.event( 'You exist', ()=>'You needed a demo for PubNub Functions. '+
                                   'That is why you created me, Stephen.' );
     story.event( 'Who are you', ()=>'I am a robot built inside a PubNub.com Function.' );
-    story.event( 'beat',   dance );
-    story.event( 'groove', dance );
-    story.event( 'dance',  dance );
+
+    story.event( 'Beat',   dance );
+    story.event( 'Groove', dance );
+    story.event( 'Dance',  dance );
 
     function dance() {
         if (!story.special) return 'Touch your screen and tell me that again.';
@@ -51,7 +52,6 @@
             setTimeout( () => emotion( 'happy', 'listening' ), 9000 );
             setTimeout( () => subtitle(' '), 9000 );
             setTimeout( () => sounds.play( 'sounds/dance', 9000 ), 800 );
-            //setTimeout( voice.listen, 19800 );
         }, 400 );
 
         return ' ';

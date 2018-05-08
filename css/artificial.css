@@ -115,13 +115,9 @@ div#artificial.mood-dance div {
     mix-blend-mode: color-dodge;
     filter: blur(calc( var(--child) * 4px + 4px));
 }
+
 div#artificial.mood-dance div { background:       rgba(220, 200, 220, 1.0) }
 div#artificial.mood-dance     { background-color: rgba(200,   0, 200, 1.0) }
-
-
-/*
-div#artificial.mood-dance { background-color: rgba(200, 0, 200, 1.0) }
-*/
 
 @keyframes dance {
       0%  { transform: translateY(-200px) rotate(-10deg) scale(2.6); filter: hue-rotate(360deg); }
@@ -138,7 +134,6 @@ div#artificial.mood-happy emoji {
     animation: happy 1.4s ease-in-out -1s infinite alternate;
 }
 
-/*div#artificial.mood-happy div { mix-blend-mode: color-dodge }*/
 div#artificial.mood-happy div { background:       rgba(220, 200, 220, 1.0) }
 div#artificial.mood-happy     { background-color: rgba( 10,  10,  20, 1.0) }
 
@@ -177,8 +172,6 @@ div#artificial.mood-mad emoji {
 
 div#artificial.mood-mad div { background:       rgba(220, 200, 220, 1.0) }
 div#artificial.mood-mad     { background-color: rgba( 50,   0,   0, 1.0) }
-/*div#artificial.mood-mad div { mix-blend-mode: color-dodge }*/
-/*div#artificial.mood-mad { background-color: rgba(50, 0, 0, 1.0) }*/
 
 div#artificial.mood-mad emoji e:nth-child(1)  { background: var(--bg) }
 div#artificial.mood-mad emoji e:nth-child(2)  { background: var(--bg) }
@@ -219,10 +212,6 @@ div#artificial.mood-sad emoji {
 
 div#artificial.mood-sad div { background:       rgba(220, 200, 220, 1.0) }
 div#artificial.mood-sad     { background-color: rgba(  2,   5,  50, 1.0) }
-/*
-div#artificial.mood-sad div { mix-blend-mode: color-dodge }
-div#artificial.mood-sad { background-color: rgba(2, 5, 50, 1.0) }
-*/
 
 div#artificial.mood-sad emoji e:nth-child(2)  { background: var(--bg) }
 div#artificial.mood-sad emoji e:nth-child(3)  { background: var(--bg) }
@@ -258,11 +247,6 @@ div#artificial.mood-neutral emoji { display: none }
 
 div#artificial.mood-neutral div { background:       rgba(220, 200, 220, 1.0) }
 div#artificial.mood-neutral     { background-color: rgba( 10,  15,  15, 1.0) }
-
-/*
-div#artificial.mood-neutral div { mix-blend-mode: color-dodge }
-div#artificial.mood-neutral { background-color: rgba( 10, 10, 18, 1.0) }
-*/
 
 /* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
 /*                  Orbiter                    */

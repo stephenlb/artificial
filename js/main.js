@@ -10,6 +10,11 @@
 
 (()=>{
     'use strict';
+    visibility( e => { if (visibility()) location.reload() } );
+})();
+
+(()=>{
+    'use strict';
     const output   = document.querySelector('subtitle');
     const subtitle = window.subtitle = (text) => {
         if (!speechSynthesis.speaking) output.innerHTML = text;

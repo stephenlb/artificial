@@ -54,7 +54,6 @@
         // INJECT HERE...
         // INJECT HERE...
         let message = story(transcript);
-        console.log( 'STORY MESSAGE', message );
         if (message) chatbot_reply({ response : message });
         else         chatbot({ url : chatbot_url + transcript });
     };
@@ -70,7 +69,7 @@
         emotion( '', 'listening' );
     };
     voice.onEnd = () => {
-        emotion( '', '' );
+        emotion( '', ' ' );
         console.log('End listening.');
         if (!voice.finalResult)
             setTimeout( voice.listen, 300 );

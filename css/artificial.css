@@ -115,7 +115,7 @@ div#artificial.mood-dance div { mix-blend-mode: color-dodge }
 div#artificial.mood-dance { background-color: rgba(200, 0, 200, 1.0) }
 
 div#artificial div#orbiter {
-    transform: scale(2.0);
+    transform: scale(3.0);
 }
 div#artificial.mood-dance div#orbiter {
     transform: scale(4.0);
@@ -137,7 +137,7 @@ div#artificial.mood-happy emoji {
 }
 
 div#artificial.mood-happy div { mix-blend-mode: color-dodge }
-div#artificial.mood-happy { background-color: rgba(20, 0, 20, 1.0) }
+div#artificial.mood-happy { background-color: rgba( 10, 10, 20, 1.0) }
 
 div#artificial.mood-happy emoji e:nth-child(2)  { background: var(--bg) }
 div#artificial.mood-happy emoji e:nth-child(3)  { background: var(--bg) }
@@ -247,7 +247,7 @@ div#artificial.mood-sad emoji e:nth-child(81) { background: var(--bg) }
 /* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
 div#artificial.mood-neutral emoji { display: none }
 div#artificial.mood-neutral div { mix-blend-mode: color-dodge }
-div#artificial.mood-neutral { background-color: rgba( 10, 10, 20, 1.0) }
+div#artificial.mood-neutral { background-color: rgba( 10, 10, 18, 1.0) }
 
 /* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
 /*                  Orbiter                    */

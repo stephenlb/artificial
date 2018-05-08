@@ -280,8 +280,8 @@ div#orbiter div {
 
 div#artificial.talking div#orbiter div {
     /* brightness */
-    width:  calc( var(--child) * 10px + 30px);
-    height: calc( var(--child) * 10px + 30px);
+    width:  calc( var(--child) * 10px + 40px);
+    height: calc( var(--child) * 10px + 40px);
 }
 
 div#artificial.talking div#orbiter div {
@@ -312,7 +312,7 @@ div#artificial.listening div#orbiter div {
 
 @keyframes talking {
     0%    { transform: scale(1.8)      }
-    10%   { transform: scale(7.0, 4.0) }
+    10%   { transform: scale(4.0, 3.0) }
     100%  { transform: scale(0.2)      }
 }
 

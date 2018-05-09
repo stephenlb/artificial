@@ -52,7 +52,7 @@ subtitle {
     font-size: calc( 3vh + 3vw );
     color: #ffe;
     text-shadow: 3px 1px 4px #222;
-    font-family: "San Francisco", "Helvetica Neue";
+    font-family: "San Francisco", "Helvetica Neue", "Helvetica", Arial, Sans-Serif;
     font-weight: 200;
 }
 

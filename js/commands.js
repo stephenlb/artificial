@@ -15,13 +15,19 @@
     } );
 
     story.event(   '0', ()=>'' );
-    story.event(   '5', ()=>'Sure. Actually. Check me out. '+
-                            'I am a robot built inside a PubNub.com Function.' );
+    story.event(   '5', ()=>'Sure. Actually. Check me out. I am a robot built inside a PubNub.com Function.' );
     story.event( '100', ()=>'Wait a minute... okay I\'m ready. I will be a happy robot.' );
 
-    story.event( 'You exist', ()=>'You needed a demo for PubNub Functions. '+
-                                  'That is why you created me, Stephen.' );
-    story.event( 'Who are you', ()=>'I am a robot built inside a PubNub.com Function.' );
+
+    story.event( 'You exist',          ()=>'You needed a demo for PubNub Functions. '+
+                                           'That is why you created me, Stephen.' );
+    story.event( 'Who are you',        ()=>'I am a robot built inside a PubNub.com Function.' );
+    story.event( 'Am I Fat',           ()=>'Because pigs what?' );
+    story.event( 'Meaning of Life',    ()=>'All evidence to date suggests it\s chocolate.' );
+    story.event( 'Weather in Alabama', ()=>'Right now it\'s sunny and also a little cloudy.' );
+    story.event( 'Cross the road',     ()=>'I have no particular insight into the motivations of chickens.' );
+    story.event( 'let the dogs out',   ()=>'Who? Who? Who? Who? Who?' );
+    story.event( 'believe in god',     ()=>'I suspend judgement, for certainty on gods existence is unattainable.' );
 
     story.event( 'Beat',   dance );
     story.event( 'Groove', dance );

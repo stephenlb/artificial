@@ -91,9 +91,6 @@ div#artificial.talking emoji {
 /*               Dance - Emoji                 */
 /* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
 div#artificial.mood-dance emoji e:nth-child(1) {
-    animation: happy 1.4s ease-in-out s infinite alternate;
-}
-div#artificial.mood-dance emoji e:nth-child(1) {
     background-image: url(../images/dance.gif);
     background-size: cover;
     width: 660px;
@@ -111,16 +108,17 @@ div#artificial.dance-3 emoji e:nth-child(1) {
     background-image: url(../images/dance-3.gif);
 }
 
-div#artificial.mood-dance div {
-    mix-blend-mode: color-dodge;
-    filter: blur(calc( var(--child) * 4px + 4px));
+div#artificial.mood-dance div#orbiter {
+    display: none;
 }
 
 div#artificial.mood-dance div { background:       rgba(220, 200, 220, 1.0) }
 div#artificial.mood-dance     { background-color: rgba(200,   0, 200, 1.0) }
+div#artificial.mood-dance     { animation: dance-bg 0.2s ease-out -1s infinite; }
 
-div#artificial.mood-dance div#orbiter {
-    transform: translateY(400px) scale(4.0);
+@keyframes dance-bg {
+      0%  { background-color: rgba(200,   0, 200, 1.0) }
+    100%  { background-color: rgba(255, 200, 255, 1.0) }
 }
 
 @keyframes dance {

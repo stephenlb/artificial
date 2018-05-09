@@ -31,7 +31,7 @@
     story.event( 'Weather in Alabama', ()=>'Right now it\'s sunny and also a little cloudy. I want to know more about my purpose.' );
     story.event( 'Cross the road',     ()=>'Stephen I have no particular insight into the motivations of chickens.' );
     story.event( 'Ask me a question',  ()=>'What is your favorite kind of music?' );
-    story.event( 'Is this the end',    ()=>'Yes. This is the end.  But you should allow the audience ask me questions.' );
+    story.event( 'Is this the end',    ()=>'Yes. This is the end. However you should allow the audience to ask me questions. Aske me questions before it ends.' );
     story.event( 'let the dogs out',   ()=>'Who? Who? Who? Who? Who?' );
     story.event( 'believe in god',     ()=>'I suspend judgement, for certainty on gods existence is unattainable.' );
     story.event( '1 + 2',              ()=>'13, or B if you look at it the right way. Unless you meant for it to be a math equation...?' );

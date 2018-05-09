@@ -34,19 +34,21 @@
     recognition.lang           = navigator.language || 'en-US';
     recognition.interimResults = true;
 
+    voice.stopped     = false;
     voice.recognition = recognition;
 
     voice.speak = (text) => {
         const speech = new SpeechSynthesisUtterance(text);
-        //let then;
         speechSynthesis.speak(speech);
-        //return { then : cb => then = cb };
     };
 
-    voice.stop = () => recognition.stop();
+    voice.stop   = () => { voice.stopped = true; recognition.stop(); };
+    voice.start  = () => { voice.stopped = false; }
     voice.listen = () => {
-        if (speechSynthesis.speaking)
+        if (voice.stopped) return;
+        if (speechSynthesis.speaking) {
             return setTimeout( voice.listen, 100 );
+        }
 
         voice.onInterim   = voice.onInterim || (()=>{});
         voice.onFinal     = voice.onFinal   || (()=>{});

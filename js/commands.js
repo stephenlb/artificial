@@ -9,6 +9,10 @@
         sounds.play( 'sounds/ding', 400 );
         emotion( 'mad',   '' );
     } );
+    story.event( 'Neutral', ()=> {
+        sounds.play( 'sounds/ding', 400 );
+        emotion( 'neutral',   '' );
+    } );
     story.event( 'Happy', ()=> {
         sounds.play( 'sounds/ding', 400 );
         emotion( 'happy',   '' );
@@ -19,15 +23,16 @@
     story.event( '100', ()=>'Wait a minute... okay I\'m ready. I will be a happy robot.' );
 
 
-    story.event( 'You exist',          ()=>'You needed a demo for PubNub Functions. '+
+    story.event( 'You exist',          ()=>'You needed to demonstrate a use case for PubNub Functions. '+
                                            'That is why you created me, Stephen.' );
     story.event( 'Who are you',        ()=>'I am a robot built inside a PubNub.com Function.' );
     story.event( 'Am I Fat',           ()=>'Because pigs what?' );
-    story.event( 'Meaning of Life',    ()=>'All evidence to date suggests it\s chocolate.' );
+    story.event( 'Meaning of Life',    ()=>'All evidence to date suggests it\'s chocolate.' );
     story.event( 'Weather in Alabama', ()=>'Right now it\'s sunny and also a little cloudy.' );
-    story.event( 'Cross the road',     ()=>'I have no particular insight into the motivations of chickens.' );
+    story.event( 'Cross the road',     ()=>'Stephen I have no particular insight into the motivations of chickens.' );
     story.event( 'let the dogs out',   ()=>'Who? Who? Who? Who? Who?' );
     story.event( 'believe in god',     ()=>'I suspend judgement, for certainty on gods existence is unattainable.' );
+    story.event( '1 + 2',              ()=>'13, or B if you look at it the right way. Unless you meant for it to be a math equation...?' );
 
     story.event( 'Beat',   dance );
     story.event( 'Groove', dance );

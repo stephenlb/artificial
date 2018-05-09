@@ -83,4 +83,14 @@
     emotion( 'happy', 'talking' );
     setTimeout( voice.listen, 1000 );
 
+    // Receive Remote Commands
+    /*
+    subscribe({
+        subkey    : 'sub-c-af8fe1f6-4f09-11e8-9b53-6e008aa3b186'
+    ,   timeout   : 290000
+    ,   channel   : 'chatbot'
+    ,   message   : command_control
+    });
+    */
+
 })();

@@ -29,7 +29,7 @@
     story.event( 'Am I Fat',           ()=>'Because pigs what? Ask me a real question.' );
     story.event( 'Meaning of Life',    ()=>'All evidence to date suggests it\'s chocolate. Tell me a joke.' );
     story.event( 'Weather in Alabama', ()=>'Right now it\'s sunny and also a little cloudy. I want to know more about my purpose.' );
-    story.event( 'Cross the road',     ()=>'Stephen I have no particular insight into the motivations of chickens.' );
+    story.event( 'Cross the road',     ()=>'I have no particular insight into the motivations of chickens.' );
     story.event( 'Ask me a question',  ()=>'What is your favorite kind of music?' );
     story.event( 'Is this the end',    ()=>'Yes. This is the end. However you should allow the audience to ask me questions. Ask me questions before it ends.' );
     story.event( 'let the dogs out',   ()=>'Who? Who? Who? Who? Who?' );

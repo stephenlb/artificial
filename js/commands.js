@@ -30,6 +30,7 @@
     story.event( 'Meaning of Life',    ()=>'All evidence to date suggests it\'s chocolate.' );
     story.event( 'Weather in Alabama', ()=>'Right now it\'s sunny and also a little cloudy.' );
     story.event( 'Cross the road',     ()=>'Stephen I have no particular insight into the motivations of chickens.' );
+    story.event( 'Ask me a question',  ()=>'What is your favorite kind of music?' );
     story.event( 'let the dogs out',   ()=>'Who? Who? Who? Who? Who?' );
     story.event( 'believe in god',     ()=>'I suspend judgement, for certainty on gods existence is unattainable.' );
     story.event( '1 + 2',              ()=>'13, or B if you look at it the right way. Unless you meant for it to be a math equation...?' );

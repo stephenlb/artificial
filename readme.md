@@ -25,6 +25,57 @@ spoken.say('Hi!').then( speech => {
 } )
 ```
 
+Note that the Spoken NPM Package is only for capturing your voice and
+converting your voice into text.
+You can use this text to transmit to a chatbot URL service.
+The chatbot URL Service would reply with a text which can be used
+with `spoken.say( responseText )` command to speak aloud using
+an artificial robot.
+And we include a chatbot for free:
+
+#### Cleverbot Chatbot Function
+
+```javascript
+let session = "";
+let uri     = "http://www.cleverbot.com/getreply?";
+
+export default (request, response) => {
+    const pubnub = require('pubnub');
+    const xhr    = require('xhr');
+    const vault  = require('vault');
+
+    let message = request.params.message || "";
+
+    return vault.get("cleverbot-key").then( key => {
+        if (Math.random() > 0.95) session = "";
+        return xhr.fetch( uri + [
+            "key="   + key
+        ,   "input=" + message
+        ,   "cs="    + session
+        ,   "cb_settings_tweak1=100"
+        ,   "cb_settings_tweak2=100"
+        ,   "ts=" + (+new Date())
+        ].join('&') ).then( result => {
+            let bot = null;
+            try      { bot = JSON.parse(result.body)                }
+            catch(e) { 
+                session = "";
+                bot = { output: "Bot Error.", cs : session };
+            }
+            const reply = { "response" : bot.output || '' };
+            session = bot.cs;
+            pubnub.publish({ channel : "chatbot" , message : reply || '' });
+            return response.send(reply);
+        } );
+    } );
+};
+```
+
+Using the above code you can plug into
+[PubNub Functions](https://www.pubnub.com/products/functions/)
+service to get a full end-to-end chatbot user experience.
+
+
 ### Text-to-Speech
 
 Synthetic voices are pretty good these days.

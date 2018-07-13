@@ -1,5 +1,7 @@
 # Artificial Chatbot
 
+> [Start your chatbot conversation right now]()
+
 If the internet could talk, what would it say?
 Start your conversation with the internet today and find out.
 Cleverbot is an ML application that was trained by humans who frequent the
@@ -7,10 +9,14 @@ internet.
 
 ### How to build a Chatbot that talks to You
 
-![Voice Apps](https://i.imgur.com/tXJmwrN.gif)
-
 [Spoken](https://www.npmjs.com/package/spoken) is a free NPM Package for voice
 controlled apps.
+
+![Voice Apps](https://i.imgur.com/tXJmwrN.gif)
+
+You can easily add this too your application on **mobile apps** and web.
+The following is a simple example of a chatbot conversation flow.
+Remember you need to have a microphone enabled on your phone or laptop.
 
 ```javascript
 spoken.say('Hi!').then( speech => {
@@ -23,7 +29,6 @@ spoken.say('Hi!').then( speech => {
 
 Synthetic voices are pretty good these days.
 You can still tell they are robot voices.
-
 Turn text into real-world spoken voice.
 The voice is synthetic.
 You can pick from a few different voices too.

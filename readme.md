@@ -7,6 +7,12 @@ Start your conversation with the internet today and find out.
 Cleverbot is an ML application that was trained by humans who frequent the
 internet.
 
+### Build an 80's Chatbot with an NPM Package
+
+How to build a
+[voice-controlled intelligent chatbot](https://www.pubnub.com/blog/build-an-80s-chatbot-with-an-npm-package/)
+who comprehends human speech and responses accordingly and naturally!
+
 ### How to build a Chatbot that talks to You
 
 [Spoken](https://www.npmjs.com/package/spoken) is a free NPM Package for voice
@@ -74,7 +80,6 @@ export default (request, response) => {
 Using the above code you can plug into
 [PubNub Functions](https://www.pubnub.com/products/functions/)
 service to get a full end-to-end chatbot user experience.
-
 
 ### Text-to-Speech
 

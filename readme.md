@@ -1,6 +1,6 @@
 # Artificial Chatbot
 
-> [Start your chatbot conversation right now]()
+> [Start your chatbot conversation right now](https://stephenlb.github.io/artificial/)
 
 If the internet could talk, what would it say?
 Start your conversation with the internet today and find out.
